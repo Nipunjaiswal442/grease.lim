@@ -23,8 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Convex local binary (large binary, not needed in repo)
-convex/_generated/
+# Convex local binary — do NOT commit; generated API types ARE committed (see convex/_generated/)
 .convex/
 
 # Secrets — never commit real credentials

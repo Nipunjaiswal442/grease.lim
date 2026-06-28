@@ -7,8 +7,7 @@ interface Message {
 }
 
 const NVIDIA_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions";
-// API key provided by operator — scoped to plant control system
-const NVIDIA_API_KEY = "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";
+const NVIDIA_API_KEY = import.meta.env.VITE_NVIDIA_API_KEY as string;
 const MODEL = "google/diffusiongemma-26b-a4b-it";
 
 const SYSTEM_PROMPT = `You are an AI assistant for the IOCL Vashi LBP Grease Plant Routing System.
