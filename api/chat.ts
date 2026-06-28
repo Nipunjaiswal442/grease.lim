@@ -1,8 +1,23 @@
-import type { IncomingMessage, ServerResponse } from "node:http";
-
 type ChatMessage = {
   role: "user" | "assistant";
   content: string;
+};
+
+type ServerRequest = {
+  method?: string;
+  on(event: "data", listener: (chunk: unknown) => void): void;
+  on(event: "end", listener: () => void): void;
+  on(event: "error", listener: (error: unknown) => void): void;
+};
+
+type ServerResponse = {
+  writeHead(statusCode: number, headers?: Record<string, string>): void;
+  write(chunk: Uint8Array | string): void;
+  end(chunk?: string): void;
+};
+
+declare const process: {
+  env: Record<string, string | undefined>;
 };
 
 const NVIDIA_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions";
@@ -26,11 +41,15 @@ Key rules:
 
 Be concise and practical. This is a plant control room assistant.`;
 
-function readBody(req: IncomingMessage): Promise<string> {
+function readBody(req: ServerRequest): Promise<string> {
   return new Promise((resolve, reject) => {
-    const chunks: Buffer[] = [];
-    req.on("data", (chunk) => chunks.push(Buffer.from(chunk)));
-    req.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
+    let body = "";
+    req.on("data", (chunk) => {
+      body += typeof chunk === "string"
+        ? chunk
+        : (chunk as { toString: (encoding?: string) => string }).toString("utf8");
+    });
+    req.on("end", () => resolve(body));
     req.on("error", reject);
   });
 }
@@ -40,7 +59,7 @@ function sendJson(res: ServerResponse, statusCode: number, body: unknown) {
   res.end(JSON.stringify(body));
 }
 
-export default async function handler(req: IncomingMessage, res: ServerResponse) {
+export default async function handler(req: ServerRequest, res: ServerResponse) {
   if (req.method === "OPTIONS") {
     res.writeHead(204);
     res.end();
@@ -114,7 +133,7 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
-    res.write(Buffer.from(value));
+    res.write(value);
   }
   res.end();
 }
