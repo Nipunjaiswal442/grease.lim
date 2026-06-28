@@ -1,0 +1,3127 @@
+[
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G01",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G09",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G14",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G23",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G24",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G01",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G02",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G04",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G05",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G10",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G13",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G17",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G20",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G25",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G03",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G03",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G01",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G03",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G04",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G05",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G06",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G07",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G08",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G10",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G11",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G12",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G13",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G16",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G18",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G19",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G20",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G21",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G22",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G23",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G05",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G09",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G14",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G23",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G24",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G01",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G06",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G17",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G20",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G06",
+    "toGroupCode": "G25",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G07",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G07",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G08",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G08",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G01",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G03",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G06",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G07",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G08",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G09",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G11",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G12",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G14",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G16",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G17",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G18",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G19",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G20",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G21",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G22",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G23",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G24",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G09",
+    "toGroupCode": "G25",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G09",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G10",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G14",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G23",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G24",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G01",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G11",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G17",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G20",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G11",
+    "toGroupCode": "G25",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G12",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G12",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G01",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G03",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G04",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G05",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G06",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G07",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G08",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G10",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G11",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G12",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G13",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G16",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G18",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G19",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G20",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G21",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G22",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G23",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G01",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G03",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G06",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G07",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G08",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G09",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G11",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G12",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G14",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G16",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G17",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G18",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G19",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G20",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G21",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G22",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G23",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G24",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G14",
+    "toGroupCode": "G25",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G01",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G02",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G05",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G10",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G15",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G17",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G20",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G23",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G15",
+    "toGroupCode": "G25",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G16",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G16",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G04",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G13",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G17",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G23",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G17",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G18",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G18",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G19",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G19",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G09",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G14",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G20",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G23",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G24",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G01",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G17",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G20",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G21",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G21",
+    "toGroupCode": "G25",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G22",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G23",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G22",
+    "toGroupCode": "G25",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G01",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G02",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G06",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G11",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G17",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G20",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G21",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G23",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G23",
+    "toGroupCode": "G25",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G01",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G03",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G06",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G07",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G08",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G09",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G11",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G12",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G14",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G16",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G17",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G18",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G19",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G20",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G21",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G22",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G23",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G24",
+    "relation": "SAME"
+  },
+  {
+    "fromGroupCode": "G24",
+    "toGroupCode": "G25",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G01",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G02",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G03",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G04",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G05",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G07",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G08",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G09",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G10",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G12",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G13",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G14",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G15",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G16",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G17",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G18",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G19",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G20",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G22",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G23",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G24",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G25",
+    "toGroupCode": "G25",
+    "relation": "SAME"
+  }
+]
