@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { createRoot, type Root as ReactRoot } from "react-dom/client";
-import { ConvexProvider, ConvexReactClient } from "convex/react";
 import { auth, completeGoogleRedirectSignIn } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
@@ -8,19 +7,6 @@ import App from "./App";
 import AppErrorBoundary from "./components/AppErrorBoundary";
 import LandingPage from "./components/LandingPage";
 import "./index.css";
-
-// Build Convex client at module level — null if URL is missing or invalid.
-// ConvexProvider is only mounted when convex != null AND user is signed in,
-// so a missing/wrong VITE_CONVEX_URL never prevents the landing page from rendering.
-let convex: ConvexReactClient | null = null;
-const rawConvexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
-if (rawConvexUrl) {
-  try {
-    convex = new ConvexReactClient(rawConvexUrl);
-  } catch (e) {
-    console.error("[Convex] Failed to create client:", e);
-  }
-}
 
 export function Root() {
   const [user, setUser] = useState<User | null>(null);
@@ -73,18 +59,15 @@ export function Root() {
     );
   }
 
-  // Unauthenticated OR no Convex URL → show landing page (requires no backend)
-  if (!user || !convex) {
+  // Unauthenticated → show landing page (requires no backend)
+  if (!user) {
     return <LandingPage />;
   }
 
-  // Authenticated + Convex configured → full plant app
   return (
-    <ConvexProvider client={convex}>
-      <AppErrorBoundary>
-        <App user={user} />
-      </AppErrorBoundary>
-    </ConvexProvider>
+    <AppErrorBoundary>
+      <App user={user} />
+    </AppErrorBoundary>
   );
 }
 

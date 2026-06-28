@@ -1,6 +1,5 @@
-import { useQuery, useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import type { ToastType } from "../hooks/useToast";
+import { usePlantStore } from "../data/plantContext";
 
 interface Props {
   addToast: (msg: string, type?: ToastType) => void;
@@ -92,10 +91,7 @@ function PlantEqCard({
 }
 
 export default function PlantStatus({ addToast }: Props) {
-  const plantStatus = useQuery(api.plantStatus.getPlantStatus);
-  const markClean = useMutation(api.equipment.markClean);
-  const setOOR = useMutation(api.equipment.setOutOfOrder);
-  const resetStage = useMutation(api.batches.resetBatchStage);
+  const { plantStatus, markClean, setOutOfOrder: setOOR, resetBatchStage: resetStage } = usePlantStore();
 
   const handleMarkClean = async (equipmentId: string) => {
     try {

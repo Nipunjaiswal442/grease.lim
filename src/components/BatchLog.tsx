@@ -1,6 +1,5 @@
-import { useQuery, useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import type { ToastType } from "../hooks/useToast";
+import { usePlantStore } from "../data/plantContext";
 
 interface Props {
   addToast: (msg: string, type?: ToastType) => void;
@@ -26,8 +25,7 @@ function fmtDate(ts: number) {
 }
 
 export default function BatchLog({ addToast }: Props) {
-  const batches = useQuery(api.batches.listBatches);
-  const advanceBatch = useMutation(api.batches.advanceBatch);
+  const { batches, advanceBatch } = usePlantStore();
 
   const handleAdvance = async (batchId: string) => {
     try {

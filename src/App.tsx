@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { useMutation, useQuery } from "convex/react";
-import { api } from "../convex/_generated/api";
 import { signOutUser } from "./firebase";
 import type { User } from "firebase/auth";
 import { useToast } from "./hooks/useToast";
+import { PlantDataProvider } from "./data/localPlantStore";
 import RoutingConsole from "./components/RoutingConsole";
 import PlantStatus from "./components/PlantStatus";
 import BatchLog from "./components/BatchLog";
@@ -20,15 +19,12 @@ function getInitialTheme(): Theme {
   return stored === "light" || stored === "dark" ? stored : "dark";
 }
 
-// App is only rendered when the user is authenticated and ConvexProvider is mounted.
-// Auth gating and the landing page live in main.tsx.
+// App is only rendered when the user is authenticated. Auth gating lives in main.tsx.
 export default function App({ user }: { user: User }) {
   const [view, setView] = useState<View>("routing");
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [clock, setClock] = useState(new Date());
   const { toasts, addToast, removeToast } = useToast();
-  const seedDatabase = useMutation(api.seed.seedDatabase);
-  const isSeedComplete = useQuery(api.seed.isSeedComplete);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -43,12 +39,6 @@ export default function App({ user }: { user: User }) {
     const t = setInterval(() => setClock(new Date()), 1000);
     return () => clearInterval(t);
   }, []);
-
-  useEffect(() => {
-    if (isSeedComplete === false) {
-      seedDatabase({ force: false }).catch(console.error);
-    }
-  }, [isSeedComplete, seedDatabase]);
 
   const fmtTime = (d: Date) =>
     d.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
@@ -98,12 +88,14 @@ export default function App({ user }: { user: User }) {
           ))}
       </nav>
 
-      <div className="main-content">
-        {view === "routing" && <RoutingConsole addToast={addToast} />}
-        {view === "plant" && <PlantStatus addToast={addToast} />}
-        {view === "batches" && <BatchLog addToast={addToast} />}
-        {view === "matrix" && <CompatibilityMatrix />}
-      </div>
+      <PlantDataProvider>
+        <div className="main-content">
+          {view === "routing" && <RoutingConsole addToast={addToast} />}
+          {view === "plant" && <PlantStatus addToast={addToast} />}
+          {view === "batches" && <BatchLog addToast={addToast} />}
+          {view === "matrix" && <CompatibilityMatrix />}
+        </div>
+      </PlantDataProvider>
 
       <AiAssistant />
       <ToastContainer toasts={toasts} removeToast={removeToast} />

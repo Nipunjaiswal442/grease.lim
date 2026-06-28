@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { useQuery, useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
 import type { ToastType } from "../hooks/useToast";
+import { usePlantStore } from "../data/plantContext";
 
 interface Props {
   addToast: (msg: string, type?: ToastType) => void;
@@ -80,6 +79,7 @@ function EqCard({
 }
 
 export default function RoutingConsole({ addToast }: Props) {
+  const { getRouting: getLocalRouting, createBatch, markClean } = usePlantStore();
   const [gradeInput, setGradeInput] = useState("");
   const [submittedGradeId, setSubmittedGradeId] = useState("");
   const [selectedReactor, setSelectedReactor] = useState("");
@@ -87,12 +87,7 @@ export default function RoutingConsole({ addToast }: Props) {
   const [selectedHomo, setSelectedHomo] = useState("");
   const [selectedFP, setSelectedFP] = useState("");
 
-  const getRouting = useQuery(
-    api.routing.getRouting,
-    submittedGradeId ? { gradeId: submittedGradeId } : "skip"
-  );
-  const createBatch = useMutation(api.batches.createBatch);
-  const markClean = useMutation(api.equipment.markClean);
+  const getRouting = submittedGradeId ? getLocalRouting(submittedGradeId) : undefined;
 
   const resetSelection = () => {
     setSelectedReactor(""); setSelectedKettle(""); setSelectedHomo(""); setSelectedFP("");
@@ -156,7 +151,7 @@ export default function RoutingConsole({ addToast }: Props) {
   const fillingPoints = getRouting?.fillingPoints ?? [];
 
   const allSelected = selectedReactor && selectedKettle && selectedHomo && selectedFP;
-  const loading = Boolean(submittedGradeId) && getRouting === undefined;
+  const loading = false;
   const gradeNotFound = Boolean(submittedGradeId) && getRouting === null;
 
   const selectedKettleEq = kettles.find((k) => k.equipmentId === selectedKettle);

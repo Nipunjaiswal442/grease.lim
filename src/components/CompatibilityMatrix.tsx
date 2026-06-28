@@ -1,5 +1,4 @@
-import { useQuery } from "convex/react";
-import { api } from "../../convex/_generated/api";
+import { usePlantStore } from "../data/plantContext";
 
 const CELL_SYMBOLS: Record<string, string> = {
   SAME: "•",
@@ -9,7 +8,7 @@ const CELL_SYMBOLS: Record<string, string> = {
 };
 
 export default function CompatibilityMatrix() {
-  const data = useQuery(api.compatibility.getCompatibilityMatrix);
+  const { compatibilityMatrix: data } = usePlantStore();
 
   if (!data) {
     return <div style={{ color: "var(--text-secondary)", padding: "24px", fontSize: "0.8rem" }}>Loading matrix...</div>;
