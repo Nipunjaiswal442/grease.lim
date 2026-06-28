@@ -19,14 +19,12 @@ export default function CompatibilityMatrix() {
 
   return (
     <div>
-      <div style={{ marginBottom: "16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div className="matrix-toolbar">
         <div>
-          <div className="section-heading">Base Compatibility Matrix</div>
-          <div style={{ fontSize: "0.72rem", color: "var(--text-secondary)" }}>
-            Row = From (previous batch group) · Col = To (next batch group) · ✓ = No Clean Needed
-          </div>
+          <div className="section-heading">Base Compatibility Matrix — Previous → Next (✓ = No Clean Needed)</div>
+          <div className="matrix-subtitle">From ↓ / To →</div>
         </div>
-        <div style={{ display: "flex", gap: "16px", fontSize: "0.65rem" }}>
+        <div className="matrix-legend">
           <span><span className="badge badge-AVAILABLE" style={{ marginRight: 4 }}>•</span>Same group</span>
           <span><span className="badge badge-AVAILABLE" style={{ marginRight: 4 }}>✓</span>Compatible</span>
           <span><span className="badge badge-SCHEDULED" style={{ marginRight: 4 }}>B</span>Borderline (QC)</span>
@@ -37,7 +35,7 @@ export default function CompatibilityMatrix() {
         <table className="compat-table">
           <thead>
             <tr>
-              <th className="corner row-hdr" style={{ background: "var(--bg-panel)" }}>↓ FROM \ TO →</th>
+              <th className="corner row-hdr">From↓<br />To→</th>
               {groups.map((g) => (
                 <th key={g.groupCode} title={g.name}>
                   {g.groupCode}

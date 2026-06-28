@@ -37,48 +37,47 @@ function PlantEqCard({
   onToggleOOR: () => void;
   onResetStage: () => void;
 }) {
+  const showReset = eq.status === "BUSY" && eq.currentBatch;
+
   return (
     <div className={`plant-eq-card st-${eq.status}`}>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
-        <div style={{ display: "flex", alignItems: "center" }}>
+      <div className="plant-card-top">
+        <div className="plant-card-name">
           <StatusDot status={eq.status} />
-          <span style={{ fontSize: "0.88rem", fontWeight: 500 }}>{eq.displayName}</span>
+          <span>{eq.displayName}</span>
         </div>
         <StatusBadge status={eq.status} />
       </div>
 
       {eq.lastGroupCode && (
-        <div style={{ fontSize: "0.65rem", color: "var(--text-dim)", marginBottom: 4 }}>
+        <div className="plant-card-meta">
           Last: {eq.lastGroupCode}
         </div>
       )}
       {eq.capacityT && (
-        <div style={{ fontSize: "0.65rem", color: "var(--text-dim)", marginBottom: 4 }}>
-          Capacity: {eq.capacityT}t
+        <div className="plant-card-meta">
+          {eq.capacityT}t capacity
         </div>
       )}
 
       {eq.currentBatch && (
-        <div style={{ marginTop: 6, padding: "6px 8px", background: "var(--bg-panel)", borderRadius: 2, border: "1px solid var(--border-subtle)" }}>
-          <div style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginBottom: 2 }}>
-            {eq.status === "SCHEDULED" ? "Incoming" : "Active Batch"}
+        <div className="plant-batch-block">
+          <div className="plant-batch-title">
+            {eq.status === "SCHEDULED" ? "Incoming:" : "Active:"} {eq.currentBatch.gradeId}
           </div>
-          <div style={{ fontSize: "0.78rem", color: "var(--text-primary)" }}>
-            {eq.currentBatch.gradeId} — {eq.currentBatch.gradeName}
-          </div>
-          <div style={{ display: "flex", gap: 6, marginTop: 4 }}>
+          <div className="plant-batch-tags">
             <span className="badge badge-SCHEDULED">{eq.currentBatch.groupCode}</span>
             <span className={`badge badge-stage-${eq.currentBatch.stage}`}>{eq.currentBatch.stage}</span>
           </div>
-          {eq.status === "BUSY" && (
-            <button className="btn btn-outline btn-sm" style={{ marginTop: 6 }} onClick={onResetStage}>
-              ↩ Reset Stage
-            </button>
-          )}
         </div>
       )}
 
-      <div style={{ marginTop: 8, display: "flex", gap: 6, flexWrap: "wrap" }}>
+      <div className="plant-card-actions">
+        {showReset && (
+          <button className="btn btn-outline btn-sm" onClick={onResetStage}>
+            Reset
+          </button>
+        )}
         {(eq.status === "NEEDS_CLEAN" || eq.status === "DYE_FLUSH_REQUIRED") && (
           <button className="btn btn-warn btn-sm" onClick={onMarkClean}>
             {eq.status === "DYE_FLUSH_REQUIRED" ? "Dye Flush Done" : "Mark Clean"}
@@ -130,23 +129,23 @@ export default function PlantStatus({ addToast }: Props) {
   }
 
   const columns = [
-    { key: "reactors" as const, label: "Reactors" },
-    { key: "kettles" as const, label: "Kettles" },
-    { key: "homogenisers" as const, label: "Homogenisers" },
-    { key: "fillingPoints" as const, label: "Filling Points" },
+    { key: "reactors" as const, label: "Reactors", tone: "reactor" },
+    { key: "kettles" as const, label: "Kettles", tone: "kettle" },
+    { key: "homogenisers" as const, label: "Homogenisers", tone: "homo" },
+    { key: "fillingPoints" as const, label: "Filling Points", tone: "fill" },
   ];
 
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-        <div className="section-heading" style={{ margin: 0 }}>Live Plant Status</div>
-        <div style={{ fontSize: "0.65rem", color: "var(--text-dim)" }}>
-          Real-time · Updates automatically
-        </div>
+      <div className="view-toolbar">
+        <div className="live-label"><span className="live-dot" />Live plant view</div>
+        <button className="btn btn-outline btn-sm" onClick={() => window.location.reload()}>
+          Refresh
+        </button>
       </div>
       <div className="plant-grid">
-        {columns.map(({ key, label }) => (
-          <div key={key} className="plant-col">
+        {columns.map(({ key, label, tone }) => (
+          <div key={key} className={`plant-col group-${tone}`}>
             <div className="section-heading">{label}</div>
             {(plantStatus[key] as Equipment[]).map((eq) => (
               <PlantEqCard

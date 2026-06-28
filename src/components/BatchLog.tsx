@@ -44,7 +44,7 @@ export default function BatchLog({ addToast }: Props) {
 
   if (batches.length === 0) {
     return (
-      <div style={{ textAlign: "center", padding: "60px 0", color: "var(--text-dim)", fontSize: "0.8rem" }}>
+      <div className="empty-state">
         No batches yet. Start one from the Routing Console.
       </div>
     );
@@ -52,11 +52,11 @@ export default function BatchLog({ addToast }: Props) {
 
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-        <div className="section-heading" style={{ margin: 0 }}>Batch Log</div>
-        <div style={{ fontSize: "0.65rem", color: "var(--text-dim)" }}>
-          Last {batches.length} batches · Newest first
-        </div>
+      <div className="view-toolbar">
+        <div className="live-label">Last {Math.min(batches.length, 10)} batches</div>
+        <button className="btn btn-outline btn-sm" onClick={() => window.location.reload()}>
+          Refresh
+        </button>
       </div>
       <div className="batch-table-wrap">
         <table className="batch-table">
@@ -90,6 +90,7 @@ export default function BatchLog({ addToast }: Props) {
                 </td>
                 <td>
                   {b.hasDye && <span className="badge badge-dye">🎨</span>}
+                  {!b.hasDye && <span style={{ color: "var(--text-dim)" }}>—</span>}
                 </td>
                 <td style={{ color: "var(--text-secondary)", fontSize: "0.75rem" }}>{b.reactorId ?? "—"}</td>
                 <td style={{ color: "var(--text-secondary)", fontSize: "0.75rem" }}>{b.kettleId ?? "—"}</td>
@@ -105,7 +106,7 @@ export default function BatchLog({ addToast }: Props) {
                       className="btn btn-primary btn-sm"
                       onClick={() => handleAdvance(b.batchId)}
                     >
-                      {STAGE_ACTIONS[b.stage]}
+                      {STAGE_ACTIONS[b.stage].replace("+", "→")}
                     </button>
                   )}
                   {b.stage === "complete" && (

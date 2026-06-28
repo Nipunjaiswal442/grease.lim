@@ -56,19 +56,18 @@ function EqCard({
         <StatusDot status={eq.status} />
         <span className="eq-name">{eq.displayName}</span>
         {eq.recommended && <span className="badge-rec">★ REC</span>}
-      </div>
-      <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 5 }}>
+        <span className="eq-card-spacer" />
+        {eq.capacityT && <span className="eq-capacity">{eq.capacityT}t</span>}
         <StatusBadge status={eq.status} />
-        {eq.capacityT && (
-          <span style={{ fontSize: "0.62rem", color: "var(--text-dim)" }}>{eq.capacityT}t</span>
-        )}
+      </div>
+      <div className="eq-card-meta">
         {eq.cleanRequired && (
-          <span className="badge" style={{ background: "rgba(249,115,22,.12)", color: "var(--status-clean)" }}>
-            clean req
+          <span className="badge badge-clean">
+            needs clean
           </span>
         )}
         {eq.qcConsult && (
-          <span className="badge" style={{ background: "rgba(245,158,11,.12)", color: "var(--status-scheduled)" }}>
+          <span className="badge badge-qc">
             QC consult
           </span>
         )}
@@ -161,10 +160,16 @@ export default function RoutingConsole({ addToast }: Props) {
   const gradeNotFound = Boolean(submittedGradeId) && getRouting === null;
 
   const selectedKettleEq = kettles.find((k) => k.equipmentId === selectedKettle);
+  const groupNumber = grade?.groupCode ? Number.parseInt(grade.groupCode.replace("G", ""), 10) : null;
+  const equipmentSections = [
+    { key: "reactors" as const, label: "Reactors", tone: "reactor", items: reactors },
+    { key: "kettles" as const, label: "Kettles", tone: "kettle", items: kettles },
+    { key: "homogenisers" as const, label: "Homogenisers", tone: "homo", items: homogenisers },
+    { key: "fillingPoints" as const, label: "Filling Points", tone: "fill", items: fillingPoints },
+  ];
 
   return (
     <div className="routing-layout">
-      {/* LEFT SIDEBAR */}
       <div className="routing-sidebar">
         <div className="section-heading">Product Selection</div>
 
@@ -191,50 +196,42 @@ export default function RoutingConsole({ addToast }: Props) {
           </div>
         </div>
 
-        {loading && (
-          <div style={{ fontSize: "0.75rem", color: "var(--text-secondary)", padding: "8px 0" }}>
-            Checking route options...
-          </div>
-        )}
-
-        {gradeNotFound && (
-          <div style={{ fontSize: "0.75rem", color: "var(--status-busy)", padding: "8px 0" }}>
-            Grade not found. Consult QC lab for blending sequence advice.
-          </div>
-        )}
-
         {grade && (
-          <div style={{ marginTop: 4 }}>
-            <div style={{ fontSize: "0.88rem", color: "var(--text-primary)", fontWeight: 500, marginBottom: 4 }}>
-              {grade.name}
+          <div className="product-summary">
+            <div className="product-code">{grade.gradeId}</div>
+            <div className="product-group">
+              Group {groupNumber ?? grade.groupCode} ({grade.groupCode})
             </div>
-            <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 10 }}>
-              <span className="badge badge-SCHEDULED">{grade.groupCode}</span>
+            <div className="product-name">{grade.name}</div>
+            <div className="product-badges">
               {grade.hasDye && <span className="badge badge-dye">🎨 Dye</span>}
               {grade.isFoodGrade && <span className="badge badge-food">Food Grade</span>}
               {grade.isSynthetic && <span className="badge badge-synth">Synthetic</span>}
             </div>
+          </div>
+        )}
 
-            {grade.hasDye && (
-              <div className="warn-banner purple" style={{ fontSize: "0.7rem" }}>
-                Contains dye / colour. Dye flush required on kettle, homogeniser &amp; filling point after this batch.
-              </div>
-            )}
-            {grade.isSynthetic && (
-              <div className="warn-banner blue" style={{ fontSize: "0.7rem" }}>
-                Synthetic/polyurea grade — requires dedicated equipment. Consult QC.
-              </div>
-            )}
-            {grade.isFoodGrade && (
-              <div className="warn-banner" style={{ fontSize: "0.7rem" }}>
-                Food grade — requires exclusive facility free from mineral oils. Consult QC.
-              </div>
-            )}
+        <div className="dye-card">
+          <span className={`dye-check ${grade?.hasDye ? "checked" : ""}`} />
+          <div>
+            <div className="dye-title">Contains dye / colour</div>
+            <div className="dye-copy">Dye flush required on kettle, homogeniser &amp; filling point after this batch.</div>
+          </div>
+        </div>
+
+        {grade?.isSynthetic && (
+          <div className="warn-banner blue" style={{ fontSize: "0.7rem" }}>
+            Synthetic/polyurea grade — requires dedicated equipment. Consult QC.
+          </div>
+        )}
+        {grade?.isFoodGrade && (
+          <div className="warn-banner" style={{ fontSize: "0.7rem" }}>
+            Food grade — requires exclusive facility free from mineral oils. Consult QC.
           </div>
         )}
 
         {grade && (
-          <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid var(--border-subtle)" }}>
+          <div className="selected-route-list">
             <div style={{ fontSize: "0.62rem", color: "var(--text-dim)", marginBottom: 8, letterSpacing: "0.08em" }}>
               SELECTED ROUTE
             </div>
@@ -259,22 +256,30 @@ export default function RoutingConsole({ addToast }: Props) {
         )}
       </div>
 
-      {/* RIGHT PANEL */}
-      <div className="routing-main">
+      <section className="equipment-panel">
+        <div className="section-heading">Equipment Selection</div>
         {!grade && !submittedGradeId && (
-          <div style={{ textAlign: "center", padding: "60px 0", color: "var(--text-dim)", fontSize: "0.8rem" }}>
+          <div className="empty-state">
             Enter a product code to route a batch
+          </div>
+        )}
+
+        {loading && (
+          <div className="empty-state">
+            Checking route options...
+          </div>
+        )}
+
+        {gradeNotFound && (
+          <div className="empty-state error">
+            Grade not found. Consult QC lab for blending sequence advice.
           </div>
         )}
 
         {grade && (
           <>
-            {(["reactors", "kettles", "homogenisers", "fillingPoints"] as const).map((key) => {
-              const items = { reactors, kettles, homogenisers, fillingPoints }[key];
-              const labels: Record<string, string> = {
-                reactors: "Reactors", kettles: "Kettles",
-                homogenisers: "Homogenisers", fillingPoints: "Filling Points",
-              };
+            <div className="equipment-grid">
+              {equipmentSections.map(({ key, label, tone, items }) => {
               const getSelected = () => {
                 if (key === "reactors") return selectedReactor;
                 if (key === "kettles") return selectedKettle;
@@ -289,9 +294,12 @@ export default function RoutingConsole({ addToast }: Props) {
               };
 
               return (
-                <div key={key} className="eq-section">
-                  <div className="section-heading">{labels[key]}</div>
-                  <div className="eq-grid">
+                <div key={key} className={`equipment-group group-${tone}`}>
+                  <div className="equipment-group-title">
+                    <span className="group-dot" />
+                    {label}
+                  </div>
+                  <div className="equipment-list">
                     {items.map((eq) => (
                       <div key={eq.equipmentId}>
                         <EqCard
@@ -318,7 +326,7 @@ export default function RoutingConsole({ addToast }: Props) {
                           </button>
                         )}
                         {getSelected() === eq.equipmentId && eq.cleanRequired && (
-                          <div style={{ fontSize: "0.62rem", color: "var(--status-clean)", marginTop: 3 }}>
+                          <div className="clean-note">
                             ⚠ This equipment needs cleaning before use
                           </div>
                         )}
@@ -327,9 +335,17 @@ export default function RoutingConsole({ addToast }: Props) {
                   </div>
                 </div>
               );
-            })}
+              })}
+            </div>
 
-            {/* BOTTOM PREVIEW + CONFIRM */}
+            <div className="status-legend">
+              <span><i className="legend-dot available" />Available</span>
+              <span><i className="legend-dot busy" />Busy</span>
+              <span><i className="legend-dot scheduled" />Scheduled</span>
+              <span><i className="legend-dot clean" />Needs Clean</span>
+              <span><i className="legend-dot dye" />Dye Flush Required</span>
+            </div>
+
             <div className="route-preview">
               <div className="route-path">
                 <span className="hl">{grade.gradeId}</span>
@@ -352,7 +368,7 @@ export default function RoutingConsole({ addToast }: Props) {
             </div>
           </>
         )}
-      </div>
+      </section>
     </div>
   );
 }
