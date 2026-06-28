@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useConvexAuth, useMutation, useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
-import { auth, signInWithGoogle, signOutUser } from "./firebase";
+import { auth, signOutUser } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import { useToast } from "./hooks/useToast";
@@ -11,6 +11,7 @@ import BatchLog from "./components/BatchLog";
 import CompatibilityMatrix from "./components/CompatibilityMatrix";
 import AiAssistant from "./components/AiAssistant";
 import ToastContainer from "./components/ToastContainer";
+import LandingPage from "./components/LandingPage";
 
 type View = "routing" | "plant" | "batches" | "matrix";
 
@@ -23,9 +24,7 @@ export default function App() {
   const seedDatabase = useMutation(api.seed.seedDatabase);
   const isSeedComplete = useQuery(api.seed.isSeedComplete);
 
-  useEffect(() => {
-    return onAuthStateChanged(auth, setUser);
-  }, []);
+  useEffect(() => onAuthStateChanged(auth, setUser), []);
 
   useEffect(() => {
     const t = setInterval(() => setClock(new Date()), 1000);
@@ -38,9 +37,10 @@ export default function App() {
     }
   }, [isAuthenticated, isSeedComplete, seedDatabase]);
 
+  // Loading spinner
   if (authLoading) {
     return (
-      <div className="login-screen">
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
         <div style={{ color: "var(--text-secondary)", fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>
           Initialising...
         </div>
@@ -48,26 +48,9 @@ export default function App() {
     );
   }
 
+  // Landing page for unauthenticated users
   if (!isAuthenticated) {
-    return (
-      <div className="login-screen">
-        <div className="login-card">
-          <div style={{ fontSize: "2.5rem" }}>⚙️</div>
-          <div className="login-title">Grease Plant Routing System</div>
-          <div className="login-sub">IOCL Vashi LBP — Production Control Console</div>
-          <div style={{ fontSize: "0.68rem", color: "var(--text-dim)", lineHeight: "1.6" }}>
-            Sign in with your corporate Google account to access the plant control system.
-          </div>
-          <button
-            className="btn btn-primary"
-            onClick={() => signInWithGoogle().catch(console.error)}
-            style={{ width: "100%", justifyContent: "center" }}
-          >
-            Sign in with Google
-          </button>
-        </div>
-      </div>
-    );
+    return <LandingPage />;
   }
 
   const fmtTime = (d: Date) =>

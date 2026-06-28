@@ -3,9 +3,13 @@ import { useState, useRef, useEffect } from "react";
 interface Message {
   role: "user" | "assistant";
   content: string;
+  thinking?: string;
 }
 
-const DEFAULT_URL = "http://localhost:1234";
+const NVIDIA_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions";
+// API key provided by operator — scoped to plant control system
+const NVIDIA_API_KEY = "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";
+const MODEL = "google/diffusiongemma-26b-a4b-it";
 
 const SYSTEM_PROMPT = `You are an AI assistant for the IOCL Vashi LBP Grease Plant Routing System.
 You help plant operators with:
@@ -17,7 +21,7 @@ You help plant operators with:
 - General grease manufacturing process guidance
 
 Key rules:
-- 25 product groups (G01-G25) based on thickener type and colour
+- 25 product groups (G01–G25) based on thickener type and colour
 - Compatibility: SAME/COMPATIBLE = no clean, BORDERLINE = QC consult required, INCOMPATIBLE = must clean kettle
 - Dye products require DYE_FLUSH on kettle, homogeniser, and filling point after batch
 - Synthetic/polyurea greases need dedicated equipment
@@ -26,13 +30,97 @@ Key rules:
 
 Be concise and practical. This is a plant control room assistant.`;
 
+async function callNvidiaStream(
+  messages: Message[],
+  onToken: (token: string) => void,
+  onThink: (token: string) => void
+): Promise<void> {
+  const response = await fetch(NVIDIA_ENDPOINT, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${NVIDIA_API_KEY}`,
+      "Content-Type": "application/json",
+      Accept: "text/event-stream",
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [
+        { role: "user", content: SYSTEM_PROMPT },
+        ...messages.map((m) => ({ role: m.role, content: m.content })),
+      ],
+      max_tokens: 4096,
+      temperature: 1.0,
+      top_p: 0.95,
+      stream: true,
+      chat_template_kwargs: { enable_thinking: true },
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text().catch(() => `HTTP ${response.status}`);
+    throw new Error(`NVIDIA API error ${response.status}: ${err.slice(0, 200)}`);
+  }
+
+  const reader = response.body!.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let inThinking = false;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop() ?? "";
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed.startsWith("data:")) continue;
+      const data = trimmed.slice(5).trim();
+      if (data === "[DONE]") return;
+      try {
+        const parsed = JSON.parse(data);
+        const delta = parsed.choices?.[0]?.delta?.content ?? "";
+        if (!delta) continue;
+
+        // Track <think>...</think> blocks and route separately
+        let remaining = delta;
+        while (remaining) {
+          if (inThinking) {
+            const end = remaining.indexOf("</think>");
+            if (end === -1) {
+              onThink(remaining);
+              remaining = "";
+            } else {
+              onThink(remaining.slice(0, end));
+              inThinking = false;
+              remaining = remaining.slice(end + 8);
+            }
+          } else {
+            const start = remaining.indexOf("<think>");
+            if (start === -1) {
+              onToken(remaining);
+              remaining = "";
+            } else {
+              if (start > 0) onToken(remaining.slice(0, start));
+              inThinking = true;
+              remaining = remaining.slice(start + 7);
+            }
+          }
+        }
+      } catch {
+        // skip malformed SSE lines
+      }
+    }
+  }
+}
+
 export default function AiAssistant() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [lmUrl, setLmUrl] = useState(DEFAULT_URL);
-  const [showUrl, setShowUrl] = useState(false);
+  const [showThinking, setShowThinking] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,64 +130,82 @@ export default function AiAssistant() {
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
     const userMsg: Message = { role: "user", content: input.trim() };
-    setMessages((prev) => [...prev, userMsg]);
+    const allMessages = [...messages, userMsg];
+    setMessages([...allMessages, { role: "assistant", content: "", thinking: "" }]);
     setInput("");
     setLoading(true);
 
     try {
-      const response = await fetch(`${lmUrl.replace(/\/$/, "")}/v1/chat/completions`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "gemma-4",
-          messages: [
-            { role: "system", content: SYSTEM_PROMPT },
-            ...messages,
-            userMsg,
-          ],
-          temperature: 0.3,
-          max_tokens: 512,
-          stream: false,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`LM Studio returned ${response.status}`);
-      }
-
-      const data = await response.json();
-      const aiContent = data.choices?.[0]?.message?.content ?? "No response";
-      setMessages((prev) => [...prev, { role: "assistant", content: aiContent }]);
-    } catch (e: any) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: `⚠ Could not reach LM Studio at ${lmUrl}\n\nMake sure LM Studio is running with the Gemma 4 model loaded and the local server is active on port 1234.\n\nError: ${e.message}`,
+      await callNvidiaStream(
+        allMessages,
+        (token) => {
+          setMessages((prev) => {
+            const updated = [...prev];
+            const last = updated[updated.length - 1];
+            updated[updated.length - 1] = { ...last, content: last.content + token };
+            return updated;
+          });
         },
-      ]);
+        (token) => {
+          setMessages((prev) => {
+            const updated = [...prev];
+            const last = updated[updated.length - 1];
+            updated[updated.length - 1] = {
+              ...last,
+              thinking: (last.thinking ?? "") + token,
+            };
+            return updated;
+          });
+        }
+      );
+    } catch (e: any) {
+      setMessages((prev) => {
+        const updated = [...prev];
+        updated[updated.length - 1] = {
+          role: "assistant",
+          content: `⚠ NVIDIA API error: ${e.message}`,
+        };
+        return updated;
+      });
     } finally {
       setLoading(false);
     }
   };
 
+  const lastMsg = messages[messages.length - 1];
+  const isStreaming = loading && lastMsg?.role === "assistant";
+
   return (
     <>
-      <button className="ai-fab" onClick={() => setOpen((o) => !o)} title="AI Assistant (Gemma 4)">
+      <button className="ai-fab" onClick={() => setOpen((o) => !o)} title="Gemma 4 AI Assistant (NVIDIA)">
         🤖
       </button>
 
       {open && (
         <div className="ai-panel">
           <div className="ai-header">
-            <div className="ai-title">⚙ Gemma 4 Assistant</div>
-            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <div>
+              <div className="ai-title">Gemma 4 · NVIDIA</div>
+              <div style={{ fontSize: "0.55rem", color: "var(--text-dim)", marginTop: 1 }}>
+                diffusiongemma-26b-a4b-it
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
               <button
                 className="btn btn-outline btn-sm"
-                onClick={() => setShowUrl((s) => !s)}
+                onClick={() => setShowThinking((s) => !s)}
+                title="Toggle thinking trace"
+                style={{ fontSize: "0.58rem", padding: "2px 7px" }}
+              >
+                {showThinking ? "💭" : "💭"}
+              </button>
+              <button
+                className="btn btn-outline btn-sm"
+                onClick={() => setMessages([])}
+                title="Clear chat"
                 style={{ fontSize: "0.58rem", padding: "2px 6px" }}
               >
-                {showUrl ? "▲" : "⚙"}
+                ✕✕
               </button>
               <button
                 className="btn btn-outline btn-sm"
@@ -111,18 +217,6 @@ export default function AiAssistant() {
             </div>
           </div>
 
-          {showUrl && (
-            <div className="ai-url-row">
-              <span className="ai-url-label">LM Studio URL:</span>
-              <input
-                className="ai-url-input"
-                value={lmUrl}
-                onChange={(e) => setLmUrl(e.target.value)}
-                placeholder="http://localhost:1234"
-              />
-            </div>
-          )}
-
           <div className="ai-messages">
             {messages.length === 0 && (
               <div style={{ color: "var(--text-dim)", fontSize: "0.72rem", textAlign: "center", padding: "20px 0" }}>
@@ -130,14 +224,31 @@ export default function AiAssistant() {
               </div>
             )}
             {messages.map((m, i) => (
-              <div key={i} className={`ai-msg-${m.role}`}>
-                {m.content}
+              <div key={i}>
+                {m.role === "assistant" && showThinking && m.thinking && (
+                  <div
+                    style={{
+                      fontSize: "0.65rem",
+                      color: "var(--text-dim)",
+                      background: "rgba(59,130,246,0.05)",
+                      border: "1px solid rgba(59,130,246,0.15)",
+                      borderRadius: 2,
+                      padding: "4px 8px",
+                      marginBottom: 4,
+                      whiteSpace: "pre-wrap",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    💭 {m.thinking}
+                  </div>
+                )}
+                <div className={`ai-msg-${m.role}`}>
+                  {m.content || (isStreaming && i === messages.length - 1 ? "▋" : "")}
+                </div>
               </div>
             ))}
-            {loading && (
-              <div className="ai-msg-ai" style={{ color: "var(--text-dim)" }}>
-                Thinking...
-              </div>
+            {loading && !isStreaming && (
+              <div className="ai-msg-ai" style={{ color: "var(--text-dim)" }}>▋</div>
             )}
             <div ref={messagesEndRef} />
           </div>
