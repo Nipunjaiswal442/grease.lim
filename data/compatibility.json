@@ -7,12 +7,12 @@
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G02",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
@@ -27,22 +27,22 @@
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G06",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G09",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
@@ -52,12 +52,12 @@
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G11",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
@@ -67,32 +67,32 @@
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G14",
-    "relation": "BORDERLINE"
-  },
-  {
-    "fromGroupCode": "G01",
-    "toGroupCode": "G15",
     "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G01",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
@@ -102,32 +102,32 @@
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G21",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G23",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G24",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G01",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G01",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
@@ -137,72 +137,72 @@
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G04",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G05",
-    "relation": "INCOMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G10",
-    "relation": "INCOMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G13",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G02",
-    "toGroupCode": "G15",
     "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
-    "toGroupCode": "G16",
+    "toGroupCode": "G04",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G05",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G06",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G07",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G08",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G09",
     "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G10",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G11",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G12",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G13",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G14",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G15",
+    "relation": "COMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G02",
+    "toGroupCode": "G16",
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
@@ -212,37 +212,37 @@
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G20",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G02",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G02",
@@ -252,12 +252,12 @@
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
@@ -272,12 +272,12 @@
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
@@ -292,17 +292,17 @@
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
@@ -317,7 +317,7 @@
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
@@ -332,7 +332,7 @@
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G03",
@@ -347,12 +347,12 @@
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
@@ -362,17 +362,17 @@
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G03",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G04",
@@ -382,7 +382,7 @@
   {
     "fromGroupCode": "G04",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G04",
@@ -457,15 +457,15 @@
   {
     "fromGroupCode": "G04",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G04",
-    "toGroupCode": "G18",
     "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G04",
+    "toGroupCode": "G18",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G04",
     "toGroupCode": "G19",
     "relation": "INCOMPATIBLE"
   },
@@ -497,7 +497,7 @@
   {
     "fromGroupCode": "G04",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
@@ -507,12 +507,12 @@
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G02",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
@@ -527,22 +527,22 @@
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G06",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G09",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
@@ -552,12 +552,12 @@
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G11",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
@@ -567,32 +567,32 @@
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G14",
-    "relation": "BORDERLINE"
-  },
-  {
-    "fromGroupCode": "G05",
-    "toGroupCode": "G15",
     "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G05",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
@@ -602,42 +602,42 @@
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G21",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G23",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G24",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G05",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G01",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
@@ -647,7 +647,7 @@
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G05",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G06",
@@ -657,12 +657,12 @@
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
@@ -672,7 +672,7 @@
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G10",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G06",
@@ -682,7 +682,7 @@
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
@@ -702,27 +702,27 @@
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G17",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G20",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G06",
@@ -732,7 +732,7 @@
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G06",
@@ -747,17 +747,17 @@
   {
     "fromGroupCode": "G06",
     "toGroupCode": "G25",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
@@ -772,12 +772,12 @@
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
@@ -792,17 +792,17 @@
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
@@ -817,7 +817,7 @@
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
@@ -832,7 +832,7 @@
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G07",
@@ -847,12 +847,12 @@
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
@@ -862,27 +862,27 @@
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G07",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
@@ -897,12 +897,12 @@
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
@@ -917,17 +917,17 @@
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
@@ -942,7 +942,7 @@
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
@@ -957,7 +957,7 @@
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G08",
@@ -972,12 +972,12 @@
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
@@ -987,32 +987,32 @@
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G08",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G01",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G02",
-    "relation": "INCOMPATIBLE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G03",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
@@ -1022,7 +1022,7 @@
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G05",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G09",
@@ -1032,12 +1032,12 @@
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G07",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G08",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
@@ -1047,7 +1047,7 @@
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G10",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G09",
@@ -1057,7 +1057,7 @@
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G12",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
@@ -1072,12 +1072,12 @@
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G15",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G16",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
@@ -1087,17 +1087,17 @@
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G18",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G19",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G20",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G09",
@@ -1107,7 +1107,7 @@
   {
     "fromGroupCode": "G09",
     "toGroupCode": "G22",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G09",
@@ -1132,12 +1132,12 @@
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G02",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
@@ -1152,22 +1152,22 @@
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G06",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G09",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
@@ -1177,12 +1177,12 @@
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G11",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
@@ -1192,32 +1192,32 @@
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G14",
-    "relation": "BORDERLINE"
-  },
-  {
-    "fromGroupCode": "G10",
-    "toGroupCode": "G15",
     "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G10",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
@@ -1227,42 +1227,42 @@
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G21",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G23",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G24",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G10",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G01",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
@@ -1272,7 +1272,7 @@
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G05",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G11",
@@ -1282,12 +1282,12 @@
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
@@ -1297,7 +1297,7 @@
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G10",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G11",
@@ -1307,7 +1307,7 @@
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
@@ -1327,27 +1327,27 @@
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G17",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G20",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G11",
@@ -1357,7 +1357,7 @@
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G11",
@@ -1372,17 +1372,17 @@
   {
     "fromGroupCode": "G11",
     "toGroupCode": "G25",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
@@ -1397,12 +1397,12 @@
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
@@ -1417,17 +1417,17 @@
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
@@ -1442,7 +1442,7 @@
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
@@ -1457,7 +1457,7 @@
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G12",
@@ -1472,12 +1472,12 @@
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
@@ -1487,17 +1487,17 @@
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G12",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G13",
@@ -1507,7 +1507,7 @@
   {
     "fromGroupCode": "G13",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G13",
@@ -1582,15 +1582,15 @@
   {
     "fromGroupCode": "G13",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G13",
-    "toGroupCode": "G18",
     "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G13",
+    "toGroupCode": "G18",
+    "relation": "INCOMPATIBLE"
+  },
+  {
+    "fromGroupCode": "G13",
     "toGroupCode": "G19",
     "relation": "INCOMPATIBLE"
   },
@@ -1622,22 +1622,22 @@
   {
     "fromGroupCode": "G13",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G01",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G02",
-    "relation": "INCOMPATIBLE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G03",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
@@ -1647,7 +1647,7 @@
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G05",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G14",
@@ -1657,12 +1657,12 @@
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G07",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G08",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
@@ -1672,7 +1672,7 @@
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G10",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G14",
@@ -1682,7 +1682,7 @@
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G12",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
@@ -1697,12 +1697,12 @@
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G15",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G16",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
@@ -1712,17 +1712,17 @@
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G18",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G19",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G20",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G14",
@@ -1732,7 +1732,7 @@
   {
     "fromGroupCode": "G14",
     "toGroupCode": "G22",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G14",
@@ -1752,12 +1752,12 @@
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G01",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G02",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G15",
@@ -1772,7 +1772,7 @@
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G05",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G15",
@@ -1792,12 +1792,12 @@
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G10",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G15",
@@ -1817,7 +1817,7 @@
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G15",
@@ -1847,15 +1847,15 @@
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G20",
-    "relation": "INCOMPATIBLE"
-  },
-  {
-    "fromGroupCode": "G15",
-    "toGroupCode": "G21",
     "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G15",
+    "toGroupCode": "G21",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G15",
     "toGroupCode": "G22",
     "relation": "COMPATIBLE"
   },
@@ -1867,7 +1867,7 @@
   {
     "fromGroupCode": "G15",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G15",
@@ -1877,12 +1877,12 @@
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
@@ -1897,12 +1897,12 @@
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
@@ -1917,17 +1917,17 @@
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
@@ -1942,7 +1942,7 @@
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
@@ -1957,7 +1957,7 @@
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G16",
@@ -1972,12 +1972,12 @@
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
@@ -1987,22 +1987,22 @@
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G16",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
@@ -2012,32 +2012,32 @@
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G04",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G06",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
@@ -2047,22 +2047,22 @@
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G11",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G13",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
@@ -2077,7 +2077,7 @@
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
@@ -2087,32 +2087,32 @@
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G21",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
     "toGroupCode": "G23",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G17",
@@ -2127,12 +2127,12 @@
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
@@ -2147,12 +2147,12 @@
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
@@ -2167,17 +2167,17 @@
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
@@ -2192,7 +2192,7 @@
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
@@ -2207,7 +2207,7 @@
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G18",
@@ -2222,12 +2222,12 @@
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
@@ -2237,27 +2237,27 @@
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G18",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
@@ -2272,12 +2272,12 @@
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
@@ -2292,17 +2292,17 @@
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
@@ -2317,7 +2317,7 @@
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
@@ -2332,7 +2332,7 @@
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G19",
@@ -2347,12 +2347,12 @@
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
@@ -2362,17 +2362,17 @@
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G19",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
@@ -2382,12 +2382,12 @@
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G02",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
@@ -2402,22 +2402,22 @@
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G06",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G09",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
@@ -2427,12 +2427,12 @@
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G11",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
@@ -2442,32 +2442,32 @@
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G14",
-    "relation": "BORDERLINE"
-  },
-  {
-    "fromGroupCode": "G20",
-    "toGroupCode": "G15",
     "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
+    "toGroupCode": "G15",
+    "relation": "BORDERLINE"
+  },
+  {
+    "fromGroupCode": "G20",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
@@ -2477,42 +2477,42 @@
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G21",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G23",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G24",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G20",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G01",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
@@ -2522,7 +2522,7 @@
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G05",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G21",
@@ -2532,12 +2532,12 @@
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
@@ -2547,7 +2547,7 @@
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G10",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G21",
@@ -2557,7 +2557,7 @@
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
@@ -2577,27 +2577,27 @@
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G17",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G20",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G21",
@@ -2607,7 +2607,7 @@
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G21",
@@ -2622,17 +2622,17 @@
   {
     "fromGroupCode": "G21",
     "toGroupCode": "G25",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
@@ -2647,12 +2647,12 @@
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G06",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
@@ -2667,17 +2667,17 @@
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G09",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G11",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
@@ -2692,7 +2692,7 @@
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G14",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
@@ -2707,7 +2707,7 @@
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G17",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G22",
@@ -2722,12 +2722,12 @@
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G21",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
@@ -2737,32 +2737,32 @@
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G23",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G24",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G22",
     "toGroupCode": "G25",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G01",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G02",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
@@ -2772,7 +2772,7 @@
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G05",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G23",
@@ -2782,12 +2782,12 @@
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
@@ -2797,7 +2797,7 @@
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G10",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G23",
@@ -2807,7 +2807,7 @@
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
@@ -2827,27 +2827,27 @@
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G17",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G20",
-    "relation": "BORDERLINE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G23",
@@ -2857,7 +2857,7 @@
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G23",
@@ -2872,22 +2872,22 @@
   {
     "fromGroupCode": "G23",
     "toGroupCode": "G25",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G01",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G02",
-    "relation": "INCOMPATIBLE"
+    "relation": "COMPATIBLE"
   },
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G03",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
@@ -2897,7 +2897,7 @@
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G05",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G24",
@@ -2907,12 +2907,12 @@
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G07",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G08",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
@@ -2922,7 +2922,7 @@
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G10",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G24",
@@ -2932,7 +2932,7 @@
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G12",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
@@ -2947,12 +2947,12 @@
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G15",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G16",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
@@ -2962,17 +2962,17 @@
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G18",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G19",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G20",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G24",
@@ -2982,7 +2982,7 @@
   {
     "fromGroupCode": "G24",
     "toGroupCode": "G22",
-    "relation": "INCOMPATIBLE"
+    "relation": "BORDERLINE"
   },
   {
     "fromGroupCode": "G24",
@@ -3002,7 +3002,7 @@
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G01",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
@@ -3012,32 +3012,32 @@
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G03",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G04",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G05",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G06",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G07",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G08",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
@@ -3047,22 +3047,22 @@
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G10",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G11",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G12",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G13",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
@@ -3077,7 +3077,7 @@
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G16",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
@@ -3087,32 +3087,32 @@
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G18",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G19",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G20",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G21",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G22",
-    "relation": "COMPATIBLE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",
     "toGroupCode": "G23",
-    "relation": "BORDERLINE"
+    "relation": "INCOMPATIBLE"
   },
   {
     "fromGroupCode": "G25",

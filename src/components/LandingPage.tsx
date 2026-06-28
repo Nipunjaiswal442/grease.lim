@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { signInWithGoogle, signInWithEmail, registerWithEmail, resetPassword } from "../firebase";
+import heroAsset from "../assets/hero.png";
 
 type AuthMode = "signin" | "signup" | "reset" | null;
 
@@ -224,7 +225,17 @@ export default function LandingPage() {
       {/* HERO */}
       <section style={{
         padding: "80px 40px 60px", maxWidth: 880, margin: "0 auto", width: "100%",
+        position: "relative", overflow: "hidden",
       }}>
+        <img
+          src={heroAsset}
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: "absolute", right: 8, top: 34, width: 260, maxWidth: "36%",
+            opacity: 0.18, pointerEvents: "none",
+          }}
+        />
         <div style={{
           display: "inline-block", fontSize: "0.6rem", letterSpacing: "0.14em",
           textTransform: "uppercase", color: "var(--accent)",
@@ -234,8 +245,9 @@ export default function LandingPage() {
           IOCL Vashi LBP · Production Control
         </div>
         <h1 style={{
-          fontSize: "2.8rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.02em",
+          fontSize: "2.8rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: 0,
           color: "var(--text-primary)", marginBottom: 20, fontFamily: "inherit",
+          position: "relative",
         }}>
           Grease Manufacturing<br />
           <span style={{ color: "var(--accent)" }}>Routing Intelligence</span>
@@ -248,7 +260,7 @@ export default function LandingPage() {
           Route batches through shared equipment — reactors, kettles, homogenisers, and filling points
           — with full compatibility checking and real-time status tracking.
         </p>
-        <div style={{ display: "flex", gap: 12 }}>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <button className="btn btn-confirm" style={{ fontSize: "0.82rem", padding: "10px 24px" }} onClick={() => setAuthMode("signup")}>
             Launch Console →
           </button>
@@ -264,24 +276,24 @@ export default function LandingPage() {
           <div style={{ fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-dim)", marginBottom: 16 }}>
             Production Pipeline
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
             {PIPELINE.map((step, i) => (
-              <div key={step.label} style={{ display: "flex", alignItems: "center", flex: 1 }}>
-                <div style={{
-                  flex: 1, padding: "12px 16px",
-                  borderLeft: i === 0 ? `3px solid ${step.color}` : undefined,
-                  borderRight: i < PIPELINE.length - 1 ? "none" : undefined,
-                }}>
-                  <div style={{ fontSize: "0.8rem", fontWeight: 600, color: step.color, marginBottom: 4 }}>
-                    {step.label}
-                  </div>
-                  <div style={{ fontSize: "0.68rem", color: "var(--text-dim)", lineHeight: 1.4 }}>
-                    {step.desc}
-                  </div>
+              <div
+                key={step.label}
+                style={{
+                  padding: "12px 16px",
+                  borderLeft: i === 0 ? `3px solid ${step.color}` : "1px solid var(--border-subtle)",
+                  background: "var(--bg-panel)",
+                  borderRadius: 6,
+                  minWidth: 0,
+                }}
+              >
+                <div style={{ fontSize: "0.8rem", fontWeight: 600, color: step.color, marginBottom: 4 }}>
+                  {step.label}
                 </div>
-                {i < PIPELINE.length - 1 && (
-                  <div style={{ color: "var(--text-dim)", fontSize: "1.2rem", padding: "0 4px" }}>→</div>
-                )}
+                <div style={{ fontSize: "0.68rem", color: "var(--text-dim)", lineHeight: 1.4 }}>
+                  {step.desc}
+                </div>
               </div>
             ))}
           </div>
@@ -294,7 +306,7 @@ export default function LandingPage() {
           Core Features
         </div>
         <div style={{
-          display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12,
+          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 12,
         }}>
           {FEATURES.map((f) => (
             <div
@@ -318,7 +330,7 @@ export default function LandingPage() {
 
       {/* STATS BAR */}
       <section style={{ background: "var(--bg-panel)", borderTop: "1px solid var(--border-subtle)", borderBottom: "1px solid var(--border-subtle)", padding: "32px 40px" }}>
-        <div style={{ maxWidth: 880, margin: "0 auto", display: "flex", justifyContent: "space-around", textAlign: "center" }}>
+        <div style={{ maxWidth: 880, margin: "0 auto", display: "flex", justifyContent: "space-around", textAlign: "center", gap: 24, flexWrap: "wrap" }}>
           {[
             { num: "137", label: "Product Grades" },
             { num: "25", label: "Compatibility Groups" },
@@ -327,7 +339,7 @@ export default function LandingPage() {
             { num: "4", label: "Pipeline Stages" },
           ].map((s) => (
             <div key={s.label}>
-              <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "var(--accent)", letterSpacing: "-0.02em" }}>{s.num}</div>
+              <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "var(--accent)", letterSpacing: 0 }}>{s.num}</div>
               <div style={{ fontSize: "0.65rem", color: "var(--text-dim)", marginTop: 4, letterSpacing: "0.06em", textTransform: "uppercase" }}>{s.label}</div>
             </div>
           ))}
@@ -369,14 +381,14 @@ export default function LandingPage() {
         borderTop: "1px solid var(--border-subtle)", padding: "60px 40px", textAlign: "center",
       }}>
         <div style={{ maxWidth: 560, margin: "0 auto" }}>
-          <div style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: 12, letterSpacing: "-0.01em" }}>
+          <div style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: 12, letterSpacing: 0 }}>
             Ready to optimise your production routing?
           </div>
           <div style={{ fontSize: "0.78rem", color: "var(--text-secondary)", marginBottom: 28, lineHeight: 1.6 }}>
             Sign in with your Google account or create an account with email and password.
             The plant database auto-seeds on first login.
           </div>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <button className="btn btn-confirm" style={{ fontSize: "0.85rem", padding: "10px 28px" }} onClick={() => setAuthMode("signup")}>
               Create Account
             </button>
@@ -390,7 +402,7 @@ export default function LandingPage() {
       {/* FOOTER */}
       <footer style={{
         background: "var(--bg-panel)", borderTop: "1px solid var(--border-subtle)",
-        padding: "20px 40px", display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "20px 40px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap",
       }}>
         <div style={{ fontSize: "0.62rem", color: "var(--text-dim)" }}>
           ⚙ Grease Plant Routing System · IOCL Vashi LBP

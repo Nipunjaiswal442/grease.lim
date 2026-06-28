@@ -22,7 +22,7 @@ if (rawConvexUrl) {
   }
 }
 
-function Root() {
+export function Root() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 

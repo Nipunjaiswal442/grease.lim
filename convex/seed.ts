@@ -132,14 +132,14 @@ function buildCompatMatrix() {
     G17:'Silica',G18:'LiX',G19:'LiX',G20:'AlX',G21:'CaS',G22:'LiX',G23:'CaS',G24:'Na',G25:'Silica'
   };
   const tc: Record<string,Record<string,string>> = {
-    AlX:   {AlX:'C',Ca:'X',CaS:'B',LiX:'C',Clay:'X',Li12OH:'X',Na:'B',Silica:'C'},
-    Ca:    {AlX:'X',Ca:'C',CaS:'C',LiX:'C',Clay:'C',Li12OH:'B',Na:'X',Silica:'X'},
-    CaS:   {AlX:'B',Ca:'C',CaS:'C',LiX:'C',Clay:'X',Li12OH:'B',Na:'X',Silica:'B'},
-    LiX:   {AlX:'C',Ca:'C',CaS:'C',LiX:'C',Clay:'X',Li12OH:'C',Na:'X',Silica:'C'},
-    Clay:  {AlX:'X',Ca:'C',CaS:'X',LiX:'X',Clay:'C',Li12OH:'X',Na:'X',Silica:'C'},
-    Li12OH:{AlX:'X',Ca:'B',CaS:'B',LiX:'C',Clay:'X',Li12OH:'C',Na:'X',Silica:'X'},
-    Na:    {AlX:'B',Ca:'X',CaS:'X',LiX:'X',Clay:'X',Li12OH:'X',Na:'C',Silica:'X'},
-    Silica:{AlX:'C',Ca:'X',CaS:'B',LiX:'C',Clay:'C',Li12OH:'X',Na:'X',Silica:'C'},
+    AlX:   {AlX:'C',Ca:'B',CaS:'C',LiX:'B',Clay:'X',Li12OH:'B',Na:'X',Silica:'X'},
+    Ca:    {AlX:'B',Ca:'C',CaS:'B',LiX:'B',Clay:'X',Li12OH:'C',Na:'C',Silica:'X'},
+    CaS:   {AlX:'C',Ca:'B',CaS:'C',LiX:'B',Clay:'X',Li12OH:'B',Na:'X',Silica:'X'},
+    LiX:   {AlX:'B',Ca:'B',CaS:'B',LiX:'C',Clay:'X',Li12OH:'C',Na:'B',Silica:'X'},
+    Clay:  {AlX:'X',Ca:'X',CaS:'X',LiX:'X',Clay:'C',Li12OH:'X',Na:'X',Silica:'X'},
+    Li12OH:{AlX:'B',Ca:'C',CaS:'B',LiX:'C',Clay:'X',Li12OH:'C',Na:'B',Silica:'X'},
+    Na:    {AlX:'X',Ca:'C',CaS:'X',LiX:'B',Clay:'X',Li12OH:'B',Na:'C',Silica:'X'},
+    Silica:{AlX:'X',Ca:'X',CaS:'X',LiX:'X',Clay:'X',Li12OH:'X',Na:'X',Silica:'C'},
   };
   const mapR: Record<string, "COMPATIBLE"|"BORDERLINE"|"INCOMPATIBLE"> = {
     C:'COMPATIBLE',B:'BORDERLINE',X:'INCOMPATIBLE'

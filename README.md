@@ -60,7 +60,7 @@ Grease manufacturing uses shared equipment across many product grades. Running a
 | Frontend | React 19 + Vite 8 + TypeScript |
 | Backend / DB | [Convex](https://convex.dev) — real-time queries and mutations |
 | Authentication | Firebase Auth (Google OAuth + email/password) |
-| AI | NVIDIA NIM API — `google/diffusiongemma-26b-a4b-it` with SSE streaming |
+| AI | Server-side `/api/chat` proxy → NVIDIA NIM API — `google/diffusiongemma-26b-a4b-it` with SSE streaming |
 | Deployment | Vercel (SPA rewrite + security headers) |
 | Font | JetBrains Mono |
 
@@ -79,7 +79,7 @@ Browser
         │     ├── /convex/routing.ts      — compatibility resolver query
         │     ├── /convex/batches.ts      — batch lifecycle mutations
         │     └── /convex/auth.config.ts  — Firebase JWT provider config
-        └── NVIDIA NIM API  ←→  Gemma 4 AI (SSE streaming, <think> parsing)
+        └── /api/chat proxy ←→ NVIDIA NIM API (SSE streaming, <think> parsing)
 ```
 
 **Auth flow:**
@@ -139,7 +139,8 @@ VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 
-VITE_NVIDIA_API_KEY=               # from build.nvidia.com
+NVIDIA_API_KEY=                    # server-side key from build.nvidia.com
+VITE_NVIDIA_API_KEY=               # legacy local fallback only
 ```
 
 ---
@@ -158,7 +159,7 @@ The Firebase project ID is hardcoded in `convex/auth.config.ts` — no extra env
 ### 2. Deploy to Vercel
 
 1. Import the GitHub repo in [Vercel](https://vercel.com/new)
-2. Add all `VITE_*` environment variables from the list above
+2. Add all `VITE_*` environment variables from the list above, plus server-side `NVIDIA_API_KEY`
 3. Build command: `npm run build` · Output directory: `dist`
 4. Deploy
 
@@ -193,7 +194,7 @@ grease/
 │   ├── main.tsx            # App root — auth gate, Convex provider
 │   ├── App.tsx             # Plant console (nav + 4 views)
 │   ├── firebase.ts         # Firebase auth helpers
-│   ├── index.css           # Dark industrial theme
+│   ├── index.css           # Minimal white console theme
 │   ├── components/
 │   │   ├── LandingPage.tsx         # Marketing page + sign-in modal
 │   │   ├── RoutingConsole.tsx      # Grade input → equipment routing
@@ -209,6 +210,7 @@ grease/
 │   ├── groups.json         # 25 compatibility groups
 │   ├── grades.json         # 137 product grades
 │   └── compatibility.json  # 625 compatibility pairs
+├── api/chat.ts             # Server-side NVIDIA Gemma 4 streaming proxy
 ├── vercel.json             # SPA rewrite + security headers
 └── .env.example            # Environment variable template
 ```
@@ -247,7 +249,7 @@ Each group maps to a primary thickener type. Compatibility between two groups fo
 
 ## AI assistant
 
-The floating 🤖 button opens a chat panel powered by **NVIDIA NIM** (`google/diffusiongemma-26b-a4b-it`):
+The floating 🤖 button opens a chat panel powered by **NVIDIA NIM** (`google/diffusiongemma-26b-a4b-it`) through the server-side `/api/chat` proxy:
 
 - Streamed responses via Server-Sent Events
 - Extended thinking enabled — model reasoning shown via 💭 toggle

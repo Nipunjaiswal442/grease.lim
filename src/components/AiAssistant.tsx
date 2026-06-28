@@ -6,58 +6,34 @@ interface Message {
   thinking?: string;
 }
 
-const NVIDIA_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions";
-const NVIDIA_API_KEY = import.meta.env.VITE_NVIDIA_API_KEY as string;
 const MODEL = "google/diffusiongemma-26b-a4b-it";
-
-const SYSTEM_PROMPT = `You are an AI assistant for the IOCL Vashi LBP Grease Plant Routing System.
-You help plant operators with:
-- Product group compatibility and routing decisions
-- Equipment selection and cleaning requirements
-- Understanding batch stages (Reactor → Kettle → Homogeniser → Filling Point)
-- Dye/colour product handling and flush requirements
-- Borderline compatibility situations and QC consultation
-- General grease manufacturing process guidance
-
-Key rules:
-- 25 product groups (G01–G25) based on thickener type and colour
-- Compatibility: SAME/COMPATIBLE = no clean, BORDERLINE = QC consult required, INCOMPATIBLE = must clean kettle
-- Dye products require DYE_FLUSH on kettle, homogeniser, and filling point after batch
-- Synthetic/polyurea greases need dedicated equipment
-- Food grade greases need exclusive facility free from mineral oils
-- Kettle wash from incompatible changeover: collect in barrel, use for Servo Grease C or consult QC
-
-Be concise and practical. This is a plant control room assistant.`;
 
 async function callNvidiaStream(
   messages: Message[],
   onToken: (token: string) => void,
   onThink: (token: string) => void
 ): Promise<void> {
-  const response = await fetch(NVIDIA_ENDPOINT, {
+  const response = await fetch("/api/chat", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${NVIDIA_API_KEY}`,
       "Content-Type": "application/json",
       Accept: "text/event-stream",
     },
     body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "user", content: SYSTEM_PROMPT },
-        ...messages.map((m) => ({ role: m.role, content: m.content })),
-      ],
-      max_tokens: 4096,
-      temperature: 1.0,
-      top_p: 0.95,
-      stream: true,
-      chat_template_kwargs: { enable_thinking: true },
+      messages: messages.map((m) => ({ role: m.role, content: m.content })),
     }),
   });
 
   if (!response.ok) {
     const err = await response.text().catch(() => `HTTP ${response.status}`);
-    throw new Error(`NVIDIA API error ${response.status}: ${err.slice(0, 200)}`);
+    let serverError: string | undefined;
+    try {
+      const parsed = JSON.parse(err) as { error?: string };
+      serverError = parsed.error;
+    } catch {
+      serverError = undefined;
+    }
+    throw new Error(serverError ?? `AI service error ${response.status}: ${err.slice(0, 200)}`);
   }
 
   const reader = response.body!.getReader();
@@ -79,11 +55,14 @@ async function callNvidiaStream(
       if (data === "[DONE]") return;
       try {
         const parsed = JSON.parse(data);
-        const delta = parsed.choices?.[0]?.delta?.content ?? "";
-        if (!delta) continue;
+        const delta = parsed.choices?.[0]?.delta ?? {};
+        const reasoning = delta.reasoning ?? "";
+        const content = delta.content ?? "";
+        if (reasoning) onThink(reasoning);
+        if (!content) continue;
 
         // Track <think>...</think> blocks and route separately
-        let remaining = delta;
+        let remaining = content;
         while (remaining) {
           if (inThinking) {
             const end = remaining.indexOf("</think>");
@@ -162,7 +141,7 @@ export default function AiAssistant() {
         const updated = [...prev];
         updated[updated.length - 1] = {
           role: "assistant",
-          content: `⚠ NVIDIA API error: ${e.message}`,
+          content: `AI assistant error: ${e.message}`,
         };
         return updated;
       });
@@ -186,7 +165,7 @@ export default function AiAssistant() {
             <div>
               <div className="ai-title">Gemma 4 · NVIDIA</div>
               <div style={{ fontSize: "0.55rem", color: "var(--text-dim)", marginTop: 1 }}>
-                diffusiongemma-26b-a4b-it
+                {MODEL}
               </div>
             </div>
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>

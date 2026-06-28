@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import type { ToastType } from "../hooks/useToast";
@@ -20,14 +20,6 @@ type EqWithCompat = {
   cleanRequired?: boolean;
   qcConsult?: boolean;
   selectable?: boolean;
-};
-
-type RoutingData = {
-  grade: { gradeId: string; name: string; groupCode: string; hasDye: boolean; isSynthetic: boolean; isFoodGrade: boolean };
-  reactors: EqWithCompat[];
-  kettles: EqWithCompat[];
-  homogenisers: EqWithCompat[];
-  fillingPoints: EqWithCompat[];
 };
 
 const STATUS_LABELS: Record<string, string> = {
@@ -90,8 +82,7 @@ function EqCard({
 
 export default function RoutingConsole({ addToast }: Props) {
   const [gradeInput, setGradeInput] = useState("");
-  const [routingData, setRoutingData] = useState<RoutingData | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [submittedGradeId, setSubmittedGradeId] = useState("");
   const [selectedReactor, setSelectedReactor] = useState("");
   const [selectedKettle, setSelectedKettle] = useState("");
   const [selectedHomo, setSelectedHomo] = useState("");
@@ -99,57 +90,52 @@ export default function RoutingConsole({ addToast }: Props) {
 
   const getRouting = useQuery(
     api.routing.getRouting,
-    gradeInput.trim() && routingData ? { gradeId: gradeInput.trim() } : "skip"
+    submittedGradeId ? { gradeId: submittedGradeId } : "skip"
   );
   const createBatch = useMutation(api.batches.createBatch);
   const markClean = useMutation(api.equipment.markClean);
 
-  const handleRoute = async () => {
-    if (!gradeInput.trim()) return;
-    setLoading(true);
-    setRoutingData(null);
+  const resetSelection = () => {
     setSelectedReactor(""); setSelectedKettle(""); setSelectedHomo(""); setSelectedFP("");
-    try {
-      // Trigger query by setting state — query is reactive
-      setRoutingData({ grade: null as any, reactors: [], kettles: [], homogenisers: [], fillingPoints: [] });
-    } finally {
-      setLoading(false);
-    }
   };
 
-  // Use real-time query result
-  const data = getRouting ?? routingData;
+  const handleRoute = () => {
+    const nextGradeId = gradeInput.trim();
+    if (!nextGradeId) return;
+    resetSelection();
+    setSubmittedGradeId(nextGradeId);
+  };
 
   const autoSelect = (list: EqWithCompat[], setter: (v: string) => void) => {
     const rec = list.find((e) => e.recommended && e.selectable !== false);
     if (rec) setter(rec.equipmentId);
   };
 
-  // Auto-select recommended when data arrives
-  if (getRouting && getRouting.grade) {
+  useEffect(() => {
+    if (!getRouting?.grade) return;
     if (!selectedReactor && getRouting.reactors.length) autoSelect(getRouting.reactors, setSelectedReactor);
     if (!selectedKettle && getRouting.kettles.length) autoSelect(getRouting.kettles, setSelectedKettle);
     if (!selectedHomo && getRouting.homogenisers.length) autoSelect(getRouting.homogenisers, setSelectedHomo);
     if (!selectedFP && getRouting.fillingPoints.length) autoSelect(getRouting.fillingPoints, setSelectedFP);
-  }
+  }, [getRouting, selectedReactor, selectedKettle, selectedHomo, selectedFP]);
 
   const handleStartBatch = async () => {
-    if (!data?.grade || !selectedReactor || !selectedKettle || !selectedHomo || !selectedFP) return;
+    if (!getRouting?.grade || !selectedReactor || !selectedKettle || !selectedHomo || !selectedFP) return;
     try {
       await createBatch({
-        gradeId: data.grade.gradeId,
-        gradeName: data.grade.name,
-        groupCode: data.grade.groupCode,
-        hasDye: data.grade.hasDye,
+        gradeId: getRouting.grade.gradeId,
+        gradeName: getRouting.grade.name,
+        groupCode: getRouting.grade.groupCode,
+        hasDye: getRouting.grade.hasDye,
         reactorId: selectedReactor,
         kettleId: selectedKettle,
         homogeniserId: selectedHomo,
         fillingPointId: selectedFP,
       });
-      addToast(`Batch started: ${data.grade.gradeId} (${data.grade.name})`, "success");
+      addToast(`Batch started: ${getRouting.grade.gradeId} (${getRouting.grade.name})`, "success");
       setGradeInput("");
-      setRoutingData(null);
-      setSelectedReactor(""); setSelectedKettle(""); setSelectedHomo(""); setSelectedFP("");
+      setSubmittedGradeId("");
+      resetSelection();
     } catch (e: any) {
       addToast(e.message ?? "Failed to start batch", "error");
     }
@@ -171,6 +157,8 @@ export default function RoutingConsole({ addToast }: Props) {
   const fillingPoints = getRouting?.fillingPoints ?? [];
 
   const allSelected = selectedReactor && selectedKettle && selectedHomo && selectedFP;
+  const loading = Boolean(submittedGradeId) && getRouting === undefined;
+  const gradeNotFound = Boolean(submittedGradeId) && getRouting === null;
 
   const selectedKettleEq = kettles.find((k) => k.equipmentId === selectedKettle);
 
@@ -189,7 +177,10 @@ export default function RoutingConsole({ addToast }: Props) {
               value={gradeInput}
               onChange={(e) => {
                 setGradeInput(e.target.value);
-                if (!e.target.value.trim()) { setRoutingData(null); }
+                if (!e.target.value.trim()) {
+                  setSubmittedGradeId("");
+                  resetSelection();
+                }
               }}
               onKeyDown={(e) => e.key === "Enter" && handleRoute()}
               style={{ flex: 1 }}
@@ -200,7 +191,13 @@ export default function RoutingConsole({ addToast }: Props) {
           </div>
         </div>
 
-        {grade === null && gradeInput && (
+        {loading && (
+          <div style={{ fontSize: "0.75rem", color: "var(--text-secondary)", padding: "8px 0" }}>
+            Checking route options...
+          </div>
+        )}
+
+        {gradeNotFound && (
           <div style={{ fontSize: "0.75rem", color: "var(--status-busy)", padding: "8px 0" }}>
             Grade not found. Consult QC lab for blending sequence advice.
           </div>
@@ -264,7 +261,7 @@ export default function RoutingConsole({ addToast }: Props) {
 
       {/* RIGHT PANEL */}
       <div className="routing-main">
-        {!grade && !gradeInput && (
+        {!grade && !submittedGradeId && (
           <div style={{ textAlign: "center", padding: "60px 0", color: "var(--text-dim)", fontSize: "0.8rem" }}>
             Enter a product code to route a batch
           </div>
