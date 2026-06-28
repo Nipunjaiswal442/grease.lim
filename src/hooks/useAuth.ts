@@ -4,8 +4,8 @@ import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 
 export function useAuth() {
-  const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState<User | null>(() => auth?.currentUser ?? null);
+  const [isLoading, setIsLoading] = useState(() => Boolean(auth && !auth.currentUser));
 
   useEffect(() => {
     if (!auth) {
@@ -21,8 +21,9 @@ export function useAuth() {
 
   const fetchAccessToken = useCallback(
     async ({ forceRefreshToken }: { forceRefreshToken: boolean }) => {
-      if (!user) return null;
-      return user.getIdToken(forceRefreshToken);
+      const currentUser = user ?? auth?.currentUser;
+      if (!currentUser) return null;
+      return currentUser.getIdToken(forceRefreshToken);
     },
     [user]
   );

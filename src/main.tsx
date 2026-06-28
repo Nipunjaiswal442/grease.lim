@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import { ConvexReactClient, ConvexProviderWithAuth } from "convex/react";
+import { createRoot, type Root as ReactRoot } from "react-dom/client";
+import { ConvexReactClient, ConvexProviderWithAuth, useConvexAuth } from "convex/react";
 import { useAuth as useFirebaseAuth } from "./hooks/useAuth";
 import { auth, completeGoogleRedirectSignIn } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import App from "./App";
+import AppErrorBoundary from "./components/AppErrorBoundary";
 import LandingPage from "./components/LandingPage";
 import "./index.css";
 
@@ -81,13 +82,55 @@ export function Root() {
   // Authenticated + Convex configured → full plant app
   return (
     <ConvexProviderWithAuth client={convex} useAuth={useFirebaseAuth}>
-      <App user={user} />
+      <AppErrorBoundary>
+        <ConvexReadyApp user={user} />
+      </AppErrorBoundary>
     </ConvexProviderWithAuth>
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+function FullScreenStatus({ label }: { label: string }) {
+  return (
+    <div style={{
+      display: "flex", alignItems: "center", justifyContent: "center",
+      height: "100vh", background: "var(--bg-base)",
+    }}>
+      <div style={{
+        color: "var(--text-secondary)", fontSize: "0.7rem",
+        letterSpacing: "0.1em", textTransform: "uppercase",
+      }}>
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function ConvexReadyApp({ user }: { user: User }) {
+  const { isLoading, isAuthenticated } = useConvexAuth();
+
+  if (isLoading) {
+    return <FullScreenStatus label="Connecting to plant database..." />;
+  }
+
+  if (!isAuthenticated) {
+    return <FullScreenStatus label="Finishing secure session..." />;
+  }
+
+  return <App user={user} />;
+}
+
+const rootElement = document.getElementById("root") as (HTMLElement & { __greaseRoot?: ReactRoot }) | null;
+if (!rootElement) {
+  throw new Error("Root element #root was not found.");
+}
+
+const reactRoot = rootElement.__greaseRoot ?? createRoot(rootElement);
+rootElement.__greaseRoot = reactRoot;
+
+reactRoot.render(
   <React.StrictMode>
-    <Root />
+    <AppErrorBoundary>
+      <Root />
+    </AppErrorBoundary>
   </React.StrictMode>
 );
