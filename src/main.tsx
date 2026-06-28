@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createRoot, type Root as ReactRoot } from "react-dom/client";
-import { ConvexReactClient, ConvexProviderWithAuth, useConvexAuth } from "convex/react";
-import { useAuth as useFirebaseAuth } from "./hooks/useAuth";
+import { ConvexProvider, ConvexReactClient } from "convex/react";
 import { auth, completeGoogleRedirectSignIn } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
@@ -11,7 +10,7 @@ import LandingPage from "./components/LandingPage";
 import "./index.css";
 
 // Build Convex client at module level — null if URL is missing or invalid.
-// ConvexProviderWithAuth is only mounted when convex != null AND user is signed in,
+// ConvexProvider is only mounted when convex != null AND user is signed in,
 // so a missing/wrong VITE_CONVEX_URL never prevents the landing page from rendering.
 let convex: ConvexReactClient | null = null;
 const rawConvexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
@@ -81,42 +80,12 @@ export function Root() {
 
   // Authenticated + Convex configured → full plant app
   return (
-    <ConvexProviderWithAuth client={convex} useAuth={useFirebaseAuth}>
+    <ConvexProvider client={convex}>
       <AppErrorBoundary>
-        <ConvexReadyApp user={user} />
+        <App user={user} />
       </AppErrorBoundary>
-    </ConvexProviderWithAuth>
+    </ConvexProvider>
   );
-}
-
-function FullScreenStatus({ label }: { label: string }) {
-  return (
-    <div style={{
-      display: "flex", alignItems: "center", justifyContent: "center",
-      height: "100vh", background: "var(--bg-base)",
-    }}>
-      <div style={{
-        color: "var(--text-secondary)", fontSize: "0.7rem",
-        letterSpacing: "0.1em", textTransform: "uppercase",
-      }}>
-        {label}
-      </div>
-    </div>
-  );
-}
-
-function ConvexReadyApp({ user }: { user: User }) {
-  const { isLoading, isAuthenticated } = useConvexAuth();
-
-  if (isLoading) {
-    return <FullScreenStatus label="Connecting to plant database..." />;
-  }
-
-  if (!isAuthenticated) {
-    return <FullScreenStatus label="Finishing secure session..." />;
-  }
-
-  return <App user={user} />;
 }
 
 const rootElement = document.getElementById("root") as (HTMLElement & { __greaseRoot?: ReactRoot }) | null;

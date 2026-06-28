@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useConvexAuth, useMutation, useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { api } from "../convex/_generated/api";
 import { signOutUser } from "./firebase";
 import type { User } from "firebase/auth";
@@ -20,10 +20,9 @@ function getInitialTheme(): Theme {
   return stored === "light" || stored === "dark" ? stored : "dark";
 }
 
-// App is only rendered when the user is authenticated and ConvexProviderWithAuth is mounted.
+// App is only rendered when the user is authenticated and ConvexProvider is mounted.
 // Auth gating and the landing page live in main.tsx.
 export default function App({ user }: { user: User }) {
-  const { isAuthenticated } = useConvexAuth();
   const [view, setView] = useState<View>("routing");
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [clock, setClock] = useState(new Date());
@@ -46,10 +45,10 @@ export default function App({ user }: { user: User }) {
   }, []);
 
   useEffect(() => {
-    if (isAuthenticated && isSeedComplete === false) {
+    if (isSeedComplete === false) {
       seedDatabase({ force: false }).catch(console.error);
     }
-  }, [isAuthenticated, isSeedComplete, seedDatabase]);
+  }, [isSeedComplete, seedDatabase]);
 
   const fmtTime = (d: Date) =>
     d.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
