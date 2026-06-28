@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signInWithGoogle, signInWithEmail, registerWithEmail, resetPassword } from "../firebase";
+import { isFirebaseConfigured, signInWithGoogle, signInWithEmail, registerWithEmail, resetPassword } from "../firebase";
 import heroAsset from "../assets/hero.png";
 
 type AuthMode = "signin" | "signup" | "reset" | null;
@@ -59,6 +59,10 @@ function AuthPanel({
 
   const handleSubmit = async () => {
     setError(""); setInfo("");
+    if (!isFirebaseConfigured) {
+      setError("Firebase Auth is not configured in Vercel yet. Add the VITE_FIREBASE_* environment variables, then redeploy.");
+      return;
+    }
     if (!email.trim()) { setError("Email is required."); return; }
     if (localMode !== "reset" && !password) { setError("Password is required."); return; }
     setBusy(true);
@@ -112,6 +116,12 @@ function AuthPanel({
         <div style={{ fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-secondary)", marginBottom: 20 }}>
           {localMode === "signin" ? "Sign In" : localMode === "signup" ? "Create Account" : "Reset Password"}
         </div>
+
+        {!isFirebaseConfigured && (
+          <div className="warn-banner red" style={{ fontSize: "0.68rem", marginBottom: 16 }}>
+            Firebase Auth is not configured on this deployment yet. The website content is visible, but sign-in needs the Vercel `VITE_FIREBASE_*` variables.
+          </div>
+        )}
 
         {/* Google */}
         {localMode !== "reset" && (

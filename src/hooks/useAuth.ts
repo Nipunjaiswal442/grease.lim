@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { auth } from "../firebase";
-import { onAuthStateChanged } from "firebase/auth"
+import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 
 export function useAuth() {
@@ -8,6 +8,10 @@ export function useAuth() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (!auth) {
+      setIsLoading(false);
+      return;
+    }
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       setUser(firebaseUser);
       setIsLoading(false);

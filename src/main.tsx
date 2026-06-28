@@ -31,10 +31,14 @@ export function Root() {
     // Wrap in try/catch in case firebase.ts fails due to missing env vars.
     let unsub: (() => void) | undefined;
     try {
-      unsub = onAuthStateChanged(auth, (u) => {
-        setUser(u);
+      if (!auth) {
         setLoading(false);
-      });
+      } else {
+        unsub = onAuthStateChanged(auth, (u) => {
+          setUser(u);
+          setLoading(false);
+        });
+      }
     } catch (e) {
       console.error("[Firebase] onAuthStateChanged failed:", e);
       setLoading(false);
