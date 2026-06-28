@@ -146,7 +146,7 @@ export default defineConfig(({ mode }) => {
           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
           "font-src 'self' https://fonts.gstatic.com",
           "connect-src 'self' wss: https: http://localhost:*",
-          "frame-src https://accounts.google.com",
+          "frame-src 'self' https://accounts.google.com https://*.firebaseapp.com https://*.firebase.com",
           "img-src 'self' data: https:",
         ].join('; '),
       },

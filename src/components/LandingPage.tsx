@@ -84,6 +84,9 @@ function AuthPanel({
         "auth/invalid-email": "Invalid email address.",
         "auth/weak-password": "Password too weak (min 8 chars).",
         "auth/too-many-requests": "Too many attempts. Try again later.",
+        "auth/unauthorized-domain": "This Vercel domain is not authorised in Firebase Authentication settings.",
+        "auth/popup-blocked": "Popup blocked. Redirect sign-in will open instead.",
+        "auth/popup-closed-by-user": "Google sign-in did not finish. Try again or use email sign-in.",
       };
       setError(msg[e.code] ?? e.message ?? "Authentication failed.");
     } finally {

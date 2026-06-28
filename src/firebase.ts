@@ -2,7 +2,9 @@ import { initializeApp, getApps } from "firebase/app";
 import {
   getAuth,
   GoogleAuthProvider,
+  getRedirectResult,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -30,6 +32,7 @@ if (isFirebaseConfigured) {
     const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
     firebaseAuth = getAuth(app);
     googleProvider = new GoogleAuthProvider();
+    googleProvider.setCustomParameters({ prompt: "select_account" });
   } catch (e) {
     console.error("[Firebase] Failed to initialise:", e);
   }
@@ -48,8 +51,27 @@ export async function signInWithGoogle() {
   if (!googleProvider) {
     throw new Error("Google sign-in is not configured yet. Add the Firebase VITE_* variables in Vercel, then redeploy.");
   }
-  const result = await signInWithPopup(requireAuth(), googleProvider);
-  return result.user;
+  const currentAuth = requireAuth();
+  try {
+    const result = await signInWithPopup(currentAuth, googleProvider);
+    return result.user;
+  } catch (error: any) {
+    if (
+      error?.code === "auth/popup-closed-by-user" ||
+      error?.code === "auth/popup-blocked" ||
+      error?.code === "auth/cancelled-popup-request"
+    ) {
+      await signInWithRedirect(currentAuth, googleProvider);
+      return null;
+    }
+    throw error;
+  }
+}
+
+export async function completeGoogleRedirectSignIn() {
+  if (!auth) return null;
+  const result = await getRedirectResult(auth);
+  return result?.user ?? null;
 }
 
 export async function signInWithEmail(email: string, password: string) {

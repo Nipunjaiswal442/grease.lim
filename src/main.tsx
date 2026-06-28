@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { ConvexReactClient, ConvexProviderWithAuth } from "convex/react";
 import { useAuth as useFirebaseAuth } from "./hooks/useAuth";
-import { auth } from "./firebase";
+import { auth, completeGoogleRedirectSignIn } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import type { User } from "firebase/auth";
 import App from "./App";
@@ -34,6 +34,11 @@ export function Root() {
       if (!auth) {
         setLoading(false);
       } else {
+        completeGoogleRedirectSignIn()
+          .then((redirectUser) => {
+            if (redirectUser) setUser(redirectUser);
+          })
+          .catch((e) => console.error("[Firebase] Google redirect sign-in failed:", e));
         unsub = onAuthStateChanged(auth, (u) => {
           setUser(u);
           setLoading(false);
