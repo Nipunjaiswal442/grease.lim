@@ -11,7 +11,7 @@ export const getRouting = query({
       .query("grades")
       .withIndex("by_grade_id", (q) => q.eq("gradeId", gradeId))
       .first();
-    if (!grade) return null;
+    if (!grade || grade.isActive === false) return null;
 
     const allEquipment = await ctx.db.query("equipment").collect();
 

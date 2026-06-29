@@ -26,6 +26,7 @@ Grease manufacturing uses shared equipment across many product grades. Running a
 | **Plant Status** | Live view of all 19 equipment units — status, current batch, stage, last group |
 | **Batch Log** | Full history of every production run with per-stage advance controls |
 | **Compatibility Matrix** | 25×25 visual reference of all group-to-group compatibility pairs |
+| **Admin Management** | CRUD screens for grades, equipment, groups, and compatibility pairs |
 | **AI Assistant** | NVIDIA Gemma 4 (diffusiongemma-26b) with extended thinking — answers routing, compatibility and cleaning questions |
 | **Email + Google Auth** | Firebase Authentication with Google OAuth and email/password sign-in |
 
@@ -73,11 +74,15 @@ Browser
   └── React SPA (Vite build)
         ├── Firebase Auth  ←→  Google / Email sign-in
         ├── Convex client  ←→  Convex cloud (real-time WebSocket)
-        │     ├── /convex/schema.ts       — 6 tables: groups, grades, compatibility,
-        │     │                             equipment, batches, seedState
+        │     ├── /convex/schema.ts       — 7 tables: groups, grades, compatibility,
+        │     │                             equipment, batches, seedState, chatSessions
         │     ├── /convex/seed.ts         — one-time data seed on first login
         │     ├── /convex/routing.ts      — compatibility resolver query
         │     ├── /convex/batches.ts      — batch lifecycle mutations
+        │     ├── /convex/groups.ts       — group management mutations
+        │     ├── /convex/equipment.ts    — equipment management mutations
+        │     ├── /convex/grades.ts       — grade management mutations
+        │     ├── /convex/compatibility.ts — matrix pair mutations
         │     └── /convex/auth.config.ts  — Firebase JWT provider config
         └── /api/chat proxy ←→ NVIDIA NIM API (SSE streaming, <think> parsing)
 ```
@@ -201,6 +206,7 @@ grease/
 │   │   ├── PlantStatus.tsx         # Live equipment grid
 │   │   ├── BatchLog.tsx            # Batch history + stage controls
 │   │   ├── CompatibilityMatrix.tsx # 25×25 group matrix
+│   │   ├── AdminPanel.tsx          # CRUD management console
 │   │   ├── AiAssistant.tsx         # NVIDIA Gemma 4 chat panel
 │   │   └── ToastContainer.tsx      # Toast notifications
 │   └── hooks/

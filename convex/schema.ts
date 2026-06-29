@@ -19,6 +19,7 @@ export default defineSchema({
     isSynthetic: v.boolean(),
     isFoodGrade: v.boolean(),
     notes: v.optional(v.string()),
+    isActive: v.optional(v.boolean()),
   })
     .index("by_grade_id", ["gradeId"])
     .index("by_group", ["groupCode"])
@@ -88,4 +89,14 @@ export default defineSchema({
     completed: v.boolean(),
     completedAt: v.optional(v.number()),
   }),
+
+  chatSessions: defineTable({
+    userId: v.string(),
+    messages: v.array(v.object({
+      role: v.union(v.literal("user"), v.literal("assistant")),
+      content: v.string(),
+      timestamp: v.number(),
+    })),
+    updatedAt: v.number(),
+  }).index("by_user", ["userId"]),
 });

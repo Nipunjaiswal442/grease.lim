@@ -187,7 +187,7 @@ export const seedDatabase = mutation({
     for (const g of GROUPS) await ctx.db.insert("groups", g);
 
     // Seed grades
-    for (const gr of GRADES) await ctx.db.insert("grades", gr);
+    for (const gr of GRADES) await ctx.db.insert("grades", { ...gr, isActive: true });
 
     // Seed compatibility
     for (const c of buildCompatMatrix()) await ctx.db.insert("compatibility", c);

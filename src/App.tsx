@@ -9,8 +9,9 @@ import BatchLog from "./components/BatchLog";
 import CompatibilityMatrix from "./components/CompatibilityMatrix";
 import AiAssistant from "./components/AiAssistant";
 import ToastContainer from "./components/ToastContainer";
+import AdminPanel from "./components/AdminPanel";
 
-type View = "routing" | "plant" | "batches" | "matrix";
+type View = "routing" | "plant" | "batches" | "matrix" | "admin";
 type Theme = "dark" | "light";
 
 function getInitialTheme(): Theme {
@@ -74,7 +75,7 @@ export default function App({ user }: { user: User }) {
       </header>
 
       <nav className="nav-tabs" aria-label="Plant console views">
-          {(["routing", "plant", "batches", "matrix"] as View[]).map((v) => (
+          {(["routing", "plant", "batches", "matrix", "admin"] as View[]).map((v) => (
             <button
               key={v}
               className={`nav-tab ${view === v ? "active" : ""}`}
@@ -84,6 +85,7 @@ export default function App({ user }: { user: User }) {
               {v === "plant" && "Plant Status"}
               {v === "batches" && "Batch Log"}
               {v === "matrix" && "Compat Matrix"}
+              {v === "admin" && "Admin"}
             </button>
           ))}
       </nav>
@@ -94,6 +96,7 @@ export default function App({ user }: { user: User }) {
           {view === "plant" && <PlantStatus addToast={addToast} />}
           {view === "batches" && <BatchLog addToast={addToast} />}
           {view === "matrix" && <CompatibilityMatrix />}
+          {view === "admin" && <AdminPanel addToast={addToast} />}
         </div>
       </PlantDataProvider>
 
