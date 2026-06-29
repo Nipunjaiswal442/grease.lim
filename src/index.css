@@ -301,6 +301,20 @@ html, body {
 /* AI ASSISTANT */
 .ai-fab { position: fixed; bottom: 24px; left: 24px; width: 44px; height: 44px; background: var(--accent); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 12px 28px rgba(37,99,235,.24); z-index: 200; transition: background .15s; }
 .ai-fab:hover { background: #2563EB; }
+.ai-fab-mark {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 4px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.66rem;
+  font-weight: 800;
+  height: 22px;
+  justify-content: center;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  width: 24px;
+}
 .ai-panel { position: fixed; bottom: 80px; left: 24px; width: 360px; max-height: 500px; background: var(--bg-panel); border: 1px solid var(--border-subtle); border-radius: 8px; box-shadow: 0 18px 50px rgba(15,23,42,.16); z-index: 199; display: flex; flex-direction: column; overflow: hidden; }
 .ai-header { padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; }
 .ai-title { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); }
@@ -311,6 +325,42 @@ html, body {
 .ai-url-row { padding: 5px 10px; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 6px; align-items: center; }
 .ai-url-label { font-size: 0.58rem; color: var(--text-dim); white-space: nowrap; }
 .ai-url-input { background: var(--bg-base); border: 1px solid var(--border-subtle); color: var(--text-secondary); font-family: inherit; font-size: 0.6rem; padding: 3px 6px; border-radius: 2px; flex: 1; outline: none; }
+.ai-trace-label {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* LANDING SYMBOLS */
+.landing-brand-mark,
+.feature-mark {
+  align-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  color: var(--accent);
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  letter-spacing: 0.08em;
+}
+
+.landing-brand-mark {
+  font-size: 0.58rem;
+  height: 20px;
+  margin-right: 10px;
+  width: 26px;
+}
+
+.feature-mark {
+  background: var(--bg-control);
+  font-size: 0.68rem;
+  height: 34px;
+  margin-bottom: 14px;
+  min-width: 34px;
+  padding: 0 8px;
+  width: fit-content;
+}
 
 /* LOGIN */
 .login-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; gap: 20px; }

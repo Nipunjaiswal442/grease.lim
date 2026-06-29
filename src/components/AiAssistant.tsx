@@ -177,7 +177,7 @@ export default function AiAssistant() {
   return (
     <>
       <button className="ai-fab" onClick={() => setOpen((o) => !o)} title="Gemma 4 AI Assistant (NVIDIA)">
-        🤖
+        <span className="ai-fab-mark" aria-hidden="true">AI</span>
       </button>
 
       {open && (
@@ -196,7 +196,7 @@ export default function AiAssistant() {
                 title="Toggle thinking trace"
                 style={{ fontSize: "0.58rem", padding: "2px 7px" }}
               >
-                {showThinking ? "💭" : "💭"}
+                THK
               </button>
               <button
                 className="btn btn-outline btn-sm"
@@ -204,14 +204,14 @@ export default function AiAssistant() {
                 title="Clear chat"
                 style={{ fontSize: "0.58rem", padding: "2px 6px" }}
               >
-                ✕✕
+                CLR
               </button>
               <button
                 className="btn btn-outline btn-sm"
                 onClick={() => setOpen(false)}
                 style={{ fontSize: "0.7rem", padding: "2px 6px" }}
               >
-                ✕
+                X
               </button>
             </div>
           </div>
@@ -238,7 +238,7 @@ export default function AiAssistant() {
                       fontStyle: "italic",
                     }}
                   >
-                    💭 {m.thinking}
+                    <span className="ai-trace-label">TRACE</span> {m.thinking}
                   </div>
                 )}
                 <div className={`ai-msg-${m.role}`}>
@@ -267,7 +267,7 @@ export default function AiAssistant() {
               onClick={sendMessage}
               disabled={loading || !input.trim()}
             >
-              →
+              SEND
             </button>
           </div>
         </div>

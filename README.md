@@ -255,10 +255,10 @@ Each group maps to a primary thickener type. Compatibility between two groups fo
 
 ## AI assistant
 
-The floating 🤖 button opens a chat panel powered by **NVIDIA NIM** (`google/diffusiongemma-26b-a4b-it`) through the server-side `/api/chat` proxy:
+The floating `AI` control opens a chat panel powered by **NVIDIA NIM** (`google/diffusiongemma-26b-a4b-it`) through the server-side `/api/chat` proxy:
 
 - Streamed responses via Server-Sent Events
-- Extended thinking enabled — model reasoning shown via 💭 toggle
+- Extended thinking enabled — model reasoning shown with the `THK` trace toggle
 - Grounded in plant-specific context: compatibility rules, dye handling, borderline decisions, cleaning procedures
 
 ---

@@ -6,32 +6,32 @@ type AuthMode = "signin" | "signup" | "reset" | null;
 
 const FEATURES = [
   {
-    icon: "⚡",
+    mark: "RT",
     title: "Routing Console",
     desc: "Enter a product code and instantly see which equipment is safe to use — no cleaning required. Recommended equipment highlighted automatically.",
   },
   {
-    icon: "🏭",
+    mark: "PL",
     title: "Live Plant Status",
     desc: "Real-time overview of all 19 equipment units across 4 stages. See active batches, equipment state, and advance stages with one click.",
   },
   {
-    icon: "📋",
+    mark: "LOG",
     title: "Batch Log",
     desc: "Full history of every production run. Track grade, group, dye flag, equipment assignments, and current pipeline stage.",
   },
   {
-    icon: "🔬",
+    mark: "MX",
     title: "Compatibility Matrix",
     desc: "25×25 visual reference of all group-to-group compatibility. Instantly know whether a kettle changeover requires cleaning.",
   },
   {
-    icon: "🤖",
+    mark: "AI",
     title: "AI Assistant",
     desc: "Powered by NVIDIA Gemma 4 with extended thinking. Ask about compatibility decisions, cleaning rules, or borderline-group guidance.",
   },
   {
-    icon: "🔒",
+    mark: "SEC",
     title: "Secure Access",
     desc: "Google or email sign-in via Firebase Auth. All sessions verified. CSP and HSTS headers enforced in production.",
   },
@@ -227,7 +227,8 @@ export default function LandingPage() {
         padding: "0 40px", height: 52, position: "sticky", top: 0, zIndex: 50,
       }}>
         <div style={{ fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600 }}>
-          ⚙ Grease Plant Routing System
+          <span className="landing-brand-mark" aria-hidden="true">GP</span>
+          Grease Plant Routing System
         </div>
         <div style={{ display: "flex", gap: 10 }}>
           <button className="btn btn-outline btn-sm" onClick={() => setAuthMode("signin")}>Sign In</button>
@@ -329,7 +330,7 @@ export default function LandingPage() {
                 borderRadius: 2, padding: "20px",
               }}
             >
-              <div style={{ fontSize: "1.4rem", marginBottom: 10 }}>{f.icon}</div>
+              <div className="feature-mark" aria-hidden="true">{f.mark}</div>
               <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--text-primary)", marginBottom: 8 }}>
                 {f.title}
               </div>
@@ -418,7 +419,7 @@ export default function LandingPage() {
         padding: "20px 40px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap",
       }}>
         <div style={{ fontSize: "0.62rem", color: "var(--text-dim)" }}>
-          ⚙ Grease Plant Routing System · IOCL Vashi LBP
+          Grease Plant Routing System · IOCL Vashi LBP
         </div>
         <div style={{ fontSize: "0.6rem", color: "var(--text-dim)" }}>
           React · Convex · Firebase · NVIDIA Gemma 4 · Vercel
