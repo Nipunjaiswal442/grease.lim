@@ -112,6 +112,8 @@ export default function PlantStatus({ addToast }: Props) {
   };
 
   const handleResetStage = async (batchId: string) => {
+    const confirmed = window.confirm(`Reset batch ${batchId} to the previous stage? Equipment status will be rolled back.`);
+    if (!confirmed) return;
     try {
       await resetStage({ batchId });
       addToast("Stage reset", "warning");

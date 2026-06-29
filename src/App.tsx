@@ -98,9 +98,9 @@ export default function App({ user }: { user: User }) {
           {view === "matrix" && <CompatibilityMatrix />}
           {view === "admin" && <AdminPanel addToast={addToast} />}
         </div>
+        <AiAssistant />
       </PlantDataProvider>
 
-      <AiAssistant />
       <ToastContainer toasts={toasts} removeToast={removeToast} />
     </div>
   );

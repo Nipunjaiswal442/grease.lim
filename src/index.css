@@ -547,6 +547,56 @@ html, body {
   padding: 16px;
 }
 
+.grade-suggestions {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  box-shadow: var(--panel-shadow);
+  margin-top: 8px;
+  max-height: 260px;
+  overflow: auto;
+}
+
+.grade-suggestion {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: grid;
+  font-family: inherit;
+  font-size: 0.68rem;
+  gap: 8px;
+  grid-template-columns: 64px minmax(0, 1fr) 42px;
+  min-height: 34px;
+  padding: 7px 9px;
+  text-align: left;
+  width: 100%;
+}
+
+.grade-suggestion:last-child {
+  border-bottom: 0;
+}
+
+.grade-suggestion:hover,
+.grade-suggestion:focus {
+  background: var(--bg-panel-hover);
+  color: var(--text-primary);
+  outline: none;
+}
+
+.grade-suggestion span:first-child {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.grade-suggestion span:nth-child(2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .product-code {
   color: var(--text-primary);
   font-size: 1.2rem;

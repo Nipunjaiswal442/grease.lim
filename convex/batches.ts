@@ -43,7 +43,12 @@ export const createBatch = mutation({
     fillingPointId: v.string(),
   },
   handler: async (ctx, args) => {
-    const batchId = generateBatchId();
+    let batchId = generateBatchId();
+    const conflict = await ctx.db
+      .query("batches")
+      .withIndex("by_batch_id", (q) => q.eq("batchId", batchId))
+      .first();
+    if (conflict) batchId = generateBatchId();
 
     // Mark all equipment SCHEDULED, reactor immediately BUSY
     const setStatus = async (equipId: string, status: string) => {
@@ -78,6 +83,22 @@ export const createBatch = mutation({
 
 const STAGE_ORDER = ["reactor", "kettle", "homogeniser", "fill_pt", "complete"] as const;
 type Stage = (typeof STAGE_ORDER)[number];
+
+function equipmentIdForStage(
+  batch: {
+    reactorId?: string;
+    kettleId?: string;
+    homogeniserId?: string;
+    fillingPointId?: string;
+  },
+  stage: Stage
+) {
+  if (stage === "reactor") return batch.reactorId;
+  if (stage === "kettle") return batch.kettleId;
+  if (stage === "homogeniser") return batch.homogeniserId;
+  if (stage === "fill_pt") return batch.fillingPointId;
+  return undefined;
+}
 
 export const advanceBatch = mutation({
   args: { batchId: v.string() },
@@ -170,6 +191,18 @@ export const resetBatchStage = mutation({
     if (batch.stage === "reactor") throw new Error("Already at first stage");
     const currentIdx = STAGE_ORDER.indexOf(batch.stage as Stage);
     const prevStage = STAGE_ORDER[currentIdx - 1];
+
+    const patchEquipment = async (equipmentId: string | undefined, status: "BUSY" | "SCHEDULED") => {
+      if (!equipmentId) return;
+      const eq = await ctx.db
+        .query("equipment")
+        .withIndex("by_equipment_id", (q) => q.eq("equipmentId", equipmentId))
+        .first();
+      if (eq) await ctx.db.patch(eq._id, { status, lastBatchId: batchId });
+    };
+
+    await patchEquipment(equipmentIdForStage(batch, prevStage), "BUSY");
+    await patchEquipment(equipmentIdForStage(batch, batch.stage as Stage), "SCHEDULED");
     await ctx.db.patch(batch._id, { stage: prevStage, completedAt: undefined });
   },
 });

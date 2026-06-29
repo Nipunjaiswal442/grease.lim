@@ -3,6 +3,41 @@ type ChatMessage = {
   content: string;
 };
 
+type PlantContext = {
+  groups?: Array<{ groupCode: string; code: number; name: string; colour?: string; thickener?: string }>;
+  equipment?: Array<{
+    equipmentId: string;
+    displayName: string;
+    type: string;
+    capacityT?: number;
+    status: string;
+    lastGroupCode?: string;
+    lastBatchId?: string;
+  }>;
+  activeBatches?: Array<{
+    batchId: string;
+    gradeId: string;
+    gradeName?: string;
+    groupCode: string;
+    stage: string;
+    reactorId?: string;
+    kettleId?: string;
+    homogeniserId?: string;
+    fillingPointId?: string;
+  }>;
+  recentBatches?: Array<{ batchId: string; gradeId: string; groupCode: string; stage: string }>;
+  recentGrades?: Array<{
+    gradeId: string;
+    name: string;
+    groupCode: string;
+    hasDye: boolean;
+    isBituminous: boolean;
+    isSynthetic: boolean;
+    isFoodGrade: boolean;
+  }>;
+  compatibilitySummary?: Record<string, number>;
+};
+
 type ServerRequest = {
   method?: string;
   on(event: "data", listener: (chunk: unknown) => void): void;
@@ -22,7 +57,7 @@ declare const process: {
 
 const NVIDIA_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions";
 const MODEL = "google/diffusiongemma-26b-a4b-it";
-const SYSTEM_PROMPT = `You are an AI assistant for the IOCL Vashi LBP Grease Plant Routing System.
+const BASE_SYSTEM_PROMPT = `You are an AI assistant for the IOCL Vashi LBP Grease Plant Routing System.
 You help plant operators with:
 - Product group compatibility and routing decisions
 - Equipment selection and cleaning requirements
@@ -40,6 +75,74 @@ Key rules:
 - Kettle wash from incompatible changeover: collect in barrel, use for Servo Grease C or consult QC
 
 Be concise and practical. This is a plant control room assistant.`;
+
+function fmtList<T>(items: T[] | undefined, render: (item: T) => string, fallback = "None") {
+  if (!items?.length) return fallback;
+  return items.map(render).join("\n");
+}
+
+function buildSystemPrompt(ctx?: PlantContext) {
+  const equipment = ctx?.equipment ?? [];
+  const byType = (type: string) => equipment.filter((eq) => eq.type === type);
+  const equipmentLine = (eq: NonNullable<PlantContext["equipment"]>[number]) =>
+    `- ${eq.equipmentId} ${eq.displayName}: ${eq.status}${eq.capacityT ? `, ${eq.capacityT}t` : ""}${eq.lastGroupCode ? `, last ${eq.lastGroupCode}` : ""}${eq.lastBatchId ? `, batch ${eq.lastBatchId}` : ""}`;
+
+  const activeBatches = fmtList(ctx?.activeBatches, (batch) =>
+    `- ${batch.batchId}: ${batch.gradeId}${batch.gradeName ? ` ${batch.gradeName}` : ""}, ${batch.groupCode}, stage ${batch.stage}, route ${batch.reactorId ?? "?"} > ${batch.kettleId ?? "?"} > ${batch.homogeniserId ?? "?"} > ${batch.fillingPointId ?? "?"}`
+  );
+
+  const groups = fmtList(ctx?.groups, (group) =>
+    `- ${group.groupCode}: ${group.name}${group.colour ? ` [${group.colour}]` : ""}${group.thickener ? `, ${group.thickener}` : ""}`
+  );
+
+  const gradeLines = fmtList(ctx?.recentGrades, (grade) => {
+    const flags = [
+      grade.hasDye ? "DYE" : "",
+      grade.isBituminous ? "BITUMINOUS" : "",
+      grade.isSynthetic ? "SYNTHETIC" : "",
+      grade.isFoodGrade ? "FOOD" : "",
+    ].filter(Boolean);
+    return `- ${grade.gradeId}: ${grade.name}, ${grade.groupCode}${flags.length ? ` (${flags.join(", ")})` : ""}`;
+  });
+
+  const counts = ctx?.compatibilitySummary;
+  const compatCounts = counts
+    ? Object.entries(counts).map(([relation, count]) => `${relation}: ${count}`).join(", ")
+    : "Matrix summary unavailable";
+
+  return `${BASE_SYSTEM_PROMPT}
+
+Live plant context:
+
+Reactors:
+${fmtList(byType("REACTOR"), equipmentLine)}
+
+Kettles:
+${fmtList(byType("KETTLE"), equipmentLine)}
+
+Homogenisers:
+${fmtList(byType("HOMOGENISER"), equipmentLine)}
+
+Filling points:
+${fmtList(byType("FILLING_POINT"), equipmentLine)}
+
+Active batches:
+${activeBatches}
+
+Product groups:
+${groups}
+
+Known active/recent grades:
+${gradeLines}
+
+Compatibility matrix counts:
+${compatCounts}
+
+Rules for answers:
+- You are read-only. Do not claim to start batches, change status, edit matrix cells, or delete data.
+- Cite exact grade codes, group codes, equipment IDs, and batch IDs when relevant.
+- If the local context is insufficient for a specific grade or cell, say that and tell the operator where to check.`;
+}
 
 function readBody(req: ServerRequest): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -78,9 +181,11 @@ export default async function handler(req: ServerRequest, res: ServerResponse) {
   }
 
   let messages: ChatMessage[];
+  let plantContext: PlantContext | undefined;
   try {
-    const parsed = JSON.parse(await readBody(req)) as { messages?: ChatMessage[] };
+    const parsed = JSON.parse(await readBody(req)) as { messages?: ChatMessage[]; plantContext?: PlantContext };
     messages = Array.isArray(parsed.messages) ? parsed.messages : [];
+    plantContext = parsed.plantContext;
   } catch {
     sendJson(res, 400, { error: "Invalid JSON request body." });
     return;
@@ -98,7 +203,7 @@ export default async function handler(req: ServerRequest, res: ServerResponse) {
       body: JSON.stringify({
         model: MODEL,
         messages: [
-          { role: "user", content: SYSTEM_PROMPT },
+          { role: "user", content: buildSystemPrompt(plantContext) },
           ...messages.map((m) => ({ role: m.role, content: m.content })),
         ],
         max_tokens: 4096,

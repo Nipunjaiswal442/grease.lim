@@ -1,9 +1,13 @@
-// Firebase JWT auth — project ID is public (appears in authDomain), safe to hardcode
+const firebaseProjectId =
+  process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ??
+  process.env.VITE_FIREBASE_PROJECT_ID ??
+  "grease-83410";
+
 export default {
   providers: [
     {
-      domain: "https://securetoken.google.com/grease-83410",
-      applicationID: "grease-83410",
+      domain: `https://securetoken.google.com/${firebaseProjectId}`,
+      applicationID: firebaseProjectId,
     },
   ],
 };

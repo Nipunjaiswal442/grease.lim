@@ -209,6 +209,16 @@ function generateBatchId() {
   return `${mm}${dd}IV${hex}`;
 }
 
+const STAGE_ORDER: BatchStage[] = ["reactor", "kettle", "homogeniser", "fill_pt", "complete"];
+
+function equipmentIdForStage(batch: Batch, stage: BatchStage) {
+  if (stage === "reactor") return batch.reactorId;
+  if (stage === "kettle") return batch.kettleId;
+  if (stage === "homogeniser") return batch.homogeniserId;
+  if (stage === "fill_pt") return batch.fillingPointId;
+  return undefined;
+}
+
 export function PlantDataProvider({ children }: { children: ReactNode }) {
   const [groups, setGroupsState] = useState<Group[]>(() =>
     loadStored("grease-groups", () => defaultGroups)
@@ -503,7 +513,10 @@ export function PlantDataProvider({ children }: { children: ReactNode }) {
         });
       },
       createBatch: async (args) => {
-        const batchId = generateBatchId();
+        let batchId = generateBatchId();
+        if (batches.some((batch) => batch.batchId === batchId)) {
+          batchId = generateBatchId();
+        }
         setEquipment((prev) =>
           prev.map((eq) => {
             if (eq.equipmentId === args.reactorId) return { ...eq, status: "BUSY", lastBatchId: batchId };
@@ -539,11 +552,10 @@ export function PlantDataProvider({ children }: { children: ReactNode }) {
         );
       },
       advanceBatch: async ({ batchId }) => {
-        const stageOrder: BatchStage[] = ["reactor", "kettle", "homogeniser", "fill_pt", "complete"];
         const batch = batches.find((b) => b.batchId === batchId);
         if (!batch) throw new Error("Batch not found");
         if (batch.stage === "complete") throw new Error("Batch already complete");
-        const nextStage = stageOrder[stageOrder.indexOf(batch.stage) + 1];
+        const nextStage = STAGE_ORDER[STAGE_ORDER.indexOf(batch.stage) + 1];
 
         setEquipment((prev) =>
           prev.map((eq) => {
@@ -580,11 +592,24 @@ export function PlantDataProvider({ children }: { children: ReactNode }) {
         );
       },
       resetBatchStage: async ({ batchId }) => {
-        const stageOrder: BatchStage[] = ["reactor", "kettle", "homogeniser", "fill_pt", "complete"];
         const batch = batches.find((b) => b.batchId === batchId);
         if (!batch) throw new Error("Batch not found");
         if (batch.stage === "reactor") throw new Error("Already at first stage");
-        const prevStage = stageOrder[stageOrder.indexOf(batch.stage) - 1];
+        const prevStage = STAGE_ORDER[STAGE_ORDER.indexOf(batch.stage) - 1];
+        const currentEquipId = equipmentIdForStage(batch, batch.stage);
+        const previousEquipId = equipmentIdForStage(batch, prevStage);
+
+        setEquipment((prev) =>
+          prev.map((eq) => {
+            if (previousEquipId && eq.equipmentId === previousEquipId) {
+              return { ...eq, status: "BUSY", lastBatchId: batchId };
+            }
+            if (currentEquipId && eq.equipmentId === currentEquipId) {
+              return { ...eq, status: "SCHEDULED", lastBatchId: batchId };
+            }
+            return eq;
+          })
+        );
         setBatches((prev) =>
           prev.map((b) => (b.batchId === batchId ? { ...b, stage: prevStage, completedAt: undefined } : b))
         );

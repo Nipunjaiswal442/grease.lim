@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { usePlantStore } from "../data/plantContext";
 
 interface Message {
   role: "user" | "assistant";
@@ -10,6 +11,7 @@ const MODEL = "google/diffusiongemma-26b-a4b-it";
 
 async function callNvidiaStream(
   messages: Message[],
+  plantContext: unknown,
   onToken: (token: string) => void,
   onThink: (token: string) => void
 ): Promise<void> {
@@ -21,6 +23,7 @@ async function callNvidiaStream(
     },
     body: JSON.stringify({
       messages: messages.map((m) => ({ role: m.role, content: m.content })),
+      plantContext,
     }),
   });
 
@@ -94,6 +97,7 @@ async function callNvidiaStream(
 }
 
 export default function AiAssistant() {
+  const { groups, grades, equipment, batches, compatibilityMatrix } = usePlantStore();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -114,8 +118,25 @@ export default function AiAssistant() {
     setLoading(true);
 
     try {
+      const activeBatches = batches.filter((batch) => batch.stage !== "complete");
+      const recentGrades = grades.filter((grade) => grade.isActive !== false).slice(0, 60);
+      const relationCounts = Object.values(compatibilityMatrix.matrix).reduce(
+        (counts, row) => {
+          for (const relation of Object.values(row)) counts[relation] = (counts[relation] ?? 0) + 1;
+          return counts;
+        },
+        {} as Record<string, number>
+      );
       await callNvidiaStream(
         allMessages,
+        {
+          groups,
+          equipment,
+          activeBatches,
+          recentBatches: batches.slice(0, 20),
+          recentGrades,
+          compatibilitySummary: relationCounts,
+        },
         (token) => {
           setMessages((prev) => {
             const updated = [...prev];

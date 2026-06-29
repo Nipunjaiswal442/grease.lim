@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { ToastType } from "../hooks/useToast";
 import { usePlantStore } from "../data/plantContext";
 
@@ -79,7 +79,7 @@ function EqCard({
 }
 
 export default function RoutingConsole({ addToast }: Props) {
-  const { getRouting: getLocalRouting, createBatch, markClean } = usePlantStore();
+  const { getRouting: getLocalRouting, createBatch, markClean, grades } = usePlantStore();
   const [gradeInput, setGradeInput] = useState("");
   const [submittedGradeId, setSubmittedGradeId] = useState("");
   const [selectedReactor, setSelectedReactor] = useState("");
@@ -93,12 +93,25 @@ export default function RoutingConsole({ addToast }: Props) {
     setSelectedReactor(""); setSelectedKettle(""); setSelectedHomo(""); setSelectedFP("");
   };
 
-  const handleRoute = () => {
-    const nextGradeId = gradeInput.trim();
+  const handleRoute = (gradeId = gradeInput) => {
+    const nextGradeId = gradeId.trim();
     if (!nextGradeId) return;
+    setGradeInput(nextGradeId);
     resetSelection();
     setSubmittedGradeId(nextGradeId);
   };
+
+  const gradeSuggestions = useMemo(() => {
+    const q = gradeInput.trim().toLowerCase();
+    if (!q || q === submittedGradeId.toLowerCase()) return [];
+    return grades
+      .filter(
+        (grade) =>
+          grade.isActive !== false &&
+          (grade.gradeId.toLowerCase().includes(q) || grade.name.toLowerCase().includes(q))
+      )
+      .slice(0, 20);
+  }, [gradeInput, grades, submittedGradeId]);
 
   const autoSelect = (list: EqWithCompat[], setter: (v: string) => void) => {
     const rec = list.find((e) => e.recommended && e.selectable !== false);
@@ -173,7 +186,7 @@ export default function RoutingConsole({ addToast }: Props) {
           <div style={{ display: "flex", gap: 8 }}>
             <input
               className="input"
-              placeholder="e.g. 7770"
+              placeholder="e.g. 7770 or EP 2"
               value={gradeInput}
               onChange={(e) => {
                 setGradeInput(e.target.value);
@@ -185,10 +198,26 @@ export default function RoutingConsole({ addToast }: Props) {
               onKeyDown={(e) => e.key === "Enter" && handleRoute()}
               style={{ flex: 1 }}
             />
-            <button className="btn btn-primary btn-sm" onClick={handleRoute} disabled={loading || !gradeInput.trim()}>
+            <button className="btn btn-primary btn-sm" onClick={() => handleRoute()} disabled={loading || !gradeInput.trim()}>
               Route
             </button>
           </div>
+          {gradeSuggestions.length > 0 && (
+            <div className="grade-suggestions" role="listbox" aria-label="Matching grades">
+              {gradeSuggestions.map((suggestion) => (
+                <button
+                  key={suggestion.gradeId}
+                  type="button"
+                  className="grade-suggestion"
+                  onClick={() => handleRoute(suggestion.gradeId)}
+                >
+                  <span>{suggestion.gradeId}</span>
+                  <span>{suggestion.name}</span>
+                  <span>{suggestion.groupCode}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {grade && (
@@ -200,6 +229,7 @@ export default function RoutingConsole({ addToast }: Props) {
             <div className="product-name">{grade.name}</div>
             <div className="product-badges">
               {grade.hasDye && <span className="badge badge-dye">🎨 Dye</span>}
+              {grade.isBituminous && <span className="badge badge-clean">Bituminous</span>}
               {grade.isFoodGrade && <span className="badge badge-food">Food Grade</span>}
               {grade.isSynthetic && <span className="badge badge-synth">Synthetic</span>}
             </div>
@@ -222,6 +252,11 @@ export default function RoutingConsole({ addToast }: Props) {
         {grade?.isFoodGrade && (
           <div className="warn-banner" style={{ fontSize: "0.7rem" }}>
             Food grade — requires exclusive facility free from mineral oils. Consult QC.
+          </div>
+        )}
+        {grade?.isBituminous && (
+          <div className="warn-banner blue" style={{ fontSize: "0.7rem" }}>
+            Bituminous product — verify kettle cleanliness and prior wash records before charging.
           </div>
         )}
 
