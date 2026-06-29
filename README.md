@@ -1,6 +1,6 @@
 # Grease Plant Routing System
 
-Production control console for **IOCL Vashi LBP** — routes grease batches through shared plant equipment with real-time compatibility checking, batch tracking, and an AI assistant.
+Production control console for grease manufacturing — routes batches through shared plant equipment with real-time compatibility checking, batch tracking, and an AI assistant.
 
 **Live:** [grease-lim.vercel.app](https://grease-lim.vercel.app)
 
@@ -23,6 +23,7 @@ Grease manufacturing uses shared equipment across many product grades. Running a
 | Feature | Description |
 |---|---|
 | **Routing Console** | Enter a 4-digit product code → instant equipment recommendations with ★ REC / clean-required / incompatible labels |
+| **Cinematic Landing Page** | Black/silver/orange production-control landing page with preserved process artwork, scroll reveals, and bento-style feature sections |
 | **Plant Status** | Live view of all 19 equipment units — status, current batch, stage, last group |
 | **Batch Log** | Full history of every production run with per-stage advance controls |
 | **Compatibility Matrix** | 25×25 visual reference of all group-to-group compatibility pairs |
@@ -263,4 +264,4 @@ The floating `AI` control opens a chat panel powered by **NVIDIA NIM** (`google/
 
 ---
 
-*IOCL Vashi LBP — Grease Plant Production Control*
+*Grease Plant Production Control*

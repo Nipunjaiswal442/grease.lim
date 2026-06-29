@@ -43,7 +43,7 @@ type PlantContext = {
 
 const NVIDIA_ENDPOINT = 'https://integrate.api.nvidia.com/v1/chat/completions'
 const MODEL = 'google/diffusiongemma-26b-a4b-it'
-const BASE_SYSTEM_PROMPT = `You are an AI assistant for the IOCL Vashi LBP Grease Plant Routing System.
+const BASE_SYSTEM_PROMPT = `You are an AI assistant for the Grease Plant Routing System.
 You help plant operators with:
 - Product group compatibility and routing decisions
 - Equipment selection and cleaning requirements

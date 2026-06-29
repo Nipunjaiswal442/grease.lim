@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { isFirebaseConfigured, signInWithGoogle, signInWithEmail, registerWithEmail, resetPassword } from "../firebase";
 import heroAsset from "../assets/hero.png";
 
@@ -218,94 +218,83 @@ function AuthPanel({
 export default function LandingPage() {
   const [authMode, setAuthMode] = useState<AuthMode>(null);
 
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll(".reveal-on-scroll"));
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => el.classList.add("animate-reveal"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("animate-reveal");
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => elements.forEach((el) => observer.unobserve(el));
+  }, []);
+
   return (
-    <div style={{ minHeight: "100vh", background: "var(--bg-base)", display: "flex", flexDirection: "column" }}>
-      {/* NAV */}
-      <nav style={{
-        background: "var(--bg-panel)", borderBottom: "1px solid var(--border-subtle)",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "0 40px", height: 52, position: "sticky", top: 0, zIndex: 50,
-      }}>
-        <div style={{ fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600 }}>
+    <div className="landing-page">
+      <nav className="landing-nav">
+        <div className="landing-nav-brand">
           <span className="landing-brand-mark" aria-hidden="true">GP</span>
           Grease Plant Routing System
         </div>
-        <div style={{ display: "flex", gap: 10 }}>
+        <div className="landing-nav-actions">
           <button className="btn btn-outline btn-sm" onClick={() => setAuthMode("signin")}>Sign In</button>
           <button className="btn btn-confirm btn-sm" onClick={() => setAuthMode("signup")}>Get Started</button>
         </div>
       </nav>
 
-      {/* HERO */}
-      <section style={{
-        padding: "80px 40px 60px", maxWidth: 880, margin: "0 auto", width: "100%",
-        position: "relative", overflow: "hidden",
-      }}>
+      <main className="landing-hero">
+        <div className="landing-ambient" aria-hidden="true" />
         <img
           src={heroAsset}
           alt=""
           aria-hidden="true"
-          style={{
-            position: "absolute", right: 8, top: 34, width: 260, maxWidth: "36%",
-            opacity: 0.18, pointerEvents: "none",
-          }}
+          className="landing-hero-art"
         />
-        <div style={{
-          display: "inline-block", fontSize: "0.6rem", letterSpacing: "0.14em",
-          textTransform: "uppercase", color: "var(--accent)",
-          background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.2)",
-          padding: "4px 10px", borderRadius: 2, marginBottom: 24,
-        }}>
-          IOCL Vashi LBP · Production Control
-        </div>
-        <h1 style={{
-          fontSize: "2.8rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: 0,
-          color: "var(--text-primary)", marginBottom: 20, fontFamily: "inherit",
-          position: "relative",
-        }}>
-          Grease Manufacturing<br />
-          <span style={{ color: "var(--accent)" }}>Routing Intelligence</span>
+        <div className="landing-kicker reveal-on-scroll">Production Control · Compatibility Intelligence</div>
+        <h1 className="landing-title reveal-on-scroll delay-100">
+          <span>Grease Manufacturing</span>
+          <span>Routing Intelligence</span>
         </h1>
-        <p style={{
-          fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.7,
-          maxWidth: 600, marginBottom: 36,
-        }}>
+        <p className="landing-copy reveal-on-scroll delay-200">
           A production control console for 137 grease grades across 25 compatibility groups.
           Route batches through shared equipment — reactors, kettles, homogenisers, and filling points
           — with full compatibility checking and real-time status tracking.
         </p>
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-          <button className="btn btn-confirm" style={{ fontSize: "0.82rem", padding: "10px 24px" }} onClick={() => setAuthMode("signup")}>
-            Launch Console →
+        <div className="landing-hero-actions reveal-on-scroll delay-300">
+          <button className="landing-primary-action" onClick={() => setAuthMode("signup")}>
+            Launch Console
           </button>
-          <button className="btn btn-outline" style={{ fontSize: "0.82rem", padding: "10px 24px" }} onClick={() => setAuthMode("signin")}>
+          <button className="landing-secondary-action" onClick={() => setAuthMode("signin")}>
             Sign In
           </button>
         </div>
-      </section>
+      </main>
 
-      {/* PIPELINE STRIP */}
-      <section style={{ background: "var(--bg-panel)", borderTop: "1px solid var(--border-subtle)", borderBottom: "1px solid var(--border-subtle)", padding: "24px 40px" }}>
-        <div style={{ maxWidth: 880, margin: "0 auto" }}>
-          <div style={{ fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-dim)", marginBottom: 16 }}>
+      <section className="landing-strip reveal-on-scroll">
+        <div className="landing-container">
+          <div className="landing-section-label">
             Production Pipeline
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12 }}>
+          <div className="pipeline-grid">
             {PIPELINE.map((step, i) => (
               <div
                 key={step.label}
-                style={{
-                  padding: "12px 16px",
-                  borderLeft: i === 0 ? `3px solid ${step.color}` : "1px solid var(--border-subtle)",
-                  background: "var(--bg-panel)",
-                  borderRadius: 6,
-                  minWidth: 0,
-                }}
+                className="pipeline-card"
+                style={{ "--pipe-color": step.color, "--pipe-border": i === 0 ? step.color : "rgba(255,255,255,0.08)" } as CSSProperties}
               >
-                <div style={{ fontSize: "0.8rem", fontWeight: 600, color: step.color, marginBottom: 4 }}>
+                <div className="pipeline-title">
                   {step.label}
                 </div>
-                <div style={{ fontSize: "0.68rem", color: "var(--text-dim)", lineHeight: 1.4 }}>
+                <div className="pipeline-desc">
                   {step.desc}
                 </div>
               </div>
@@ -314,37 +303,84 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* FEATURES */}
-      <section style={{ padding: "60px 40px", maxWidth: 880, margin: "0 auto", width: "100%" }}>
-        <div style={{ fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-secondary)", marginBottom: 32 }}>
-          Core Features
+      <section className="landing-section landing-problem">
+        <div className="landing-container landing-two-col">
+          <div className="reveal-on-scroll">
+            <div className="landing-section-label">Routing Bottleneck</div>
+            <h2 className="landing-section-title">
+              Shared equipment needs clean sequencing.
+            </h2>
+          </div>
+          <div className="landing-problem-copy reveal-on-scroll delay-100">
+            <p>
+              Grease manufacturing depends on shared reactors, kettles, homogenisers, and filling points.
+              A poorly sequenced batch can create cleaning delays, dye flush requirements, and contamination risk.
+            </p>
+            <p>
+              The console turns compatibility, last-run group history, and active batch stage data into an operator-ready route recommendation.
+            </p>
+          </div>
         </div>
-        <div style={{
-          display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))", gap: 12,
-        }}>
+      </section>
+
+      <section className="landing-section">
+        <div className="landing-container">
+          <div className="landing-section-head reveal-on-scroll">
+            <div className="landing-section-label">Core Features</div>
+            <h2 className="landing-section-title">Built for fast plant decisions.</h2>
+          </div>
+          <div className="feature-grid">
           {FEATURES.map((f) => (
             <div
               key={f.title}
-              style={{
-                background: "var(--bg-panel)", border: "1px solid var(--border-subtle)",
-                borderRadius: 2, padding: "20px",
-              }}
+              className="feature-card reveal-on-scroll"
             >
               <div className="feature-mark" aria-hidden="true">{f.mark}</div>
-              <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--text-primary)", marginBottom: 8 }}>
+              <div className="feature-title">
                 {f.title}
               </div>
-              <div style={{ fontSize: "0.72rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+              <div className="feature-desc">
                 {f.desc}
               </div>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <section style={{ background: "var(--bg-panel)", borderTop: "1px solid var(--border-subtle)", borderBottom: "1px solid var(--border-subtle)", padding: "32px 40px" }}>
-        <div style={{ maxWidth: 880, margin: "0 auto", display: "flex", justifyContent: "space-around", textAlign: "center", gap: 24, flexWrap: "wrap" }}>
+      <section className="landing-section landing-architecture">
+        <div className="landing-container">
+          <div className="landing-section-head reveal-on-scroll">
+            <div className="landing-section-label">Operational Architecture</div>
+            <h2 className="landing-section-title">Route, lock, advance, release.</h2>
+          </div>
+          <div className="bento-grid">
+            <div className="bento-card bento-wide reveal-on-scroll">
+              <div className="feature-mark">SEQ</div>
+              <h3>Compatibility-first sequencing</h3>
+              <p>Every equipment card is scored against the previous batch group, with recommended routes shown ahead of clean-required options.</p>
+            </div>
+            <div className="bento-card reveal-on-scroll delay-100">
+              <div className="feature-mark">DYE</div>
+              <h3>Dye flush tracking</h3>
+              <p>Coloured batches automatically flag kettle, homogeniser, and filling point flush requirements after use.</p>
+            </div>
+            <div className="bento-card reveal-on-scroll">
+              <div className="feature-mark">ADM</div>
+              <h3>Controlled master data</h3>
+              <p>Grades, equipment, groups, and compatibility pairs are maintained from the admin console without changing code.</p>
+            </div>
+            <div className="bento-card bento-wide reveal-on-scroll delay-100">
+              <div className="feature-mark">LIVE</div>
+              <h3>Stage-aware equipment locking</h3>
+              <p>Batch start locks the route, stage advances release used equipment, and the plant view mirrors scheduled and active units.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="landing-stats reveal-on-scroll">
+        <div className="landing-container stats-grid">
           {[
             { num: "137", label: "Product Grades" },
             { num: "25", label: "Compatibility Groups" },
@@ -352,20 +388,21 @@ export default function LandingPage() {
             { num: "625", label: "Compatibility Pairs" },
             { num: "4", label: "Pipeline Stages" },
           ].map((s) => (
-            <div key={s.label}>
-              <div style={{ fontSize: "1.6rem", fontWeight: 700, color: "var(--accent)", letterSpacing: 0 }}>{s.num}</div>
-              <div style={{ fontSize: "0.65rem", color: "var(--text-dim)", marginTop: 4, letterSpacing: "0.06em", textTransform: "uppercase" }}>{s.label}</div>
+            <div key={s.label} className="stat-card">
+              <div className="stat-num">{s.num}</div>
+              <div className="stat-label">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section style={{ padding: "60px 40px", maxWidth: 880, margin: "0 auto", width: "100%" }}>
-        <div style={{ fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-secondary)", marginBottom: 32 }}>
-          How It Works
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+      <section className="landing-section">
+        <div className="landing-container">
+          <div className="landing-section-head reveal-on-scroll">
+            <div className="landing-section-label">How It Works</div>
+            <h2 className="landing-section-title">A four-step control loop.</h2>
+          </div>
+          <div className="steps-list">
           {[
             ["01", "Select a product grade", "Enter the 4-digit grade code (e.g. 7770 = SERVOGEM EP 2). The system resolves its compatibility group automatically."],
             ["02", "Review equipment recommendations", "Available equipment is scored for compatibility with the previous batch group. ★ REC equipment needs no cleaning."],
@@ -374,54 +411,44 @@ export default function LandingPage() {
           ].map(([num, title, desc]) => (
             <div
               key={num}
-              style={{
-                display: "flex", gap: 24, padding: "20px 0",
-                borderBottom: "1px solid var(--border-subtle)",
-              }}
+              className="step-row reveal-on-scroll"
             >
-              <div style={{ fontSize: "1.4rem", color: "var(--border-subtle)", fontWeight: 700, minWidth: 40 }}>{num}</div>
+              <div className="step-num">{num}</div>
               <div>
-                <div style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--text-primary)", marginBottom: 6 }}>{title}</div>
-                <div style={{ fontSize: "0.72rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>{desc}</div>
+                <div className="step-title">{title}</div>
+                <div className="step-desc">{desc}</div>
               </div>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{
-        background: "linear-gradient(to right, rgba(59,130,246,0.08), rgba(22,163,74,0.06))",
-        borderTop: "1px solid var(--border-subtle)", padding: "60px 40px", textAlign: "center",
-      }}>
-        <div style={{ maxWidth: 560, margin: "0 auto" }}>
-          <div style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: 12, letterSpacing: 0 }}>
+      <section className="landing-cta reveal-on-scroll">
+        <div className="landing-cta-inner">
+          <div className="landing-cta-title">
             Ready to optimise your production routing?
           </div>
-          <div style={{ fontSize: "0.78rem", color: "var(--text-secondary)", marginBottom: 28, lineHeight: 1.6 }}>
+          <div className="landing-cta-copy">
             Sign in with your Google account or create an account with email and password.
             The plant database auto-seeds on first login.
           </div>
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <button className="btn btn-confirm" style={{ fontSize: "0.85rem", padding: "10px 28px" }} onClick={() => setAuthMode("signup")}>
+          <div className="landing-hero-actions landing-cta-actions">
+            <button className="landing-primary-action" onClick={() => setAuthMode("signup")}>
               Create Account
             </button>
-            <button className="btn btn-outline" style={{ fontSize: "0.85rem", padding: "10px 28px" }} onClick={() => setAuthMode("signin")}>
+            <button className="landing-secondary-action" onClick={() => setAuthMode("signin")}>
               Sign In
             </button>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer style={{
-        background: "var(--bg-panel)", borderTop: "1px solid var(--border-subtle)",
-        padding: "20px 40px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap",
-      }}>
-        <div style={{ fontSize: "0.62rem", color: "var(--text-dim)" }}>
-          Grease Plant Routing System · IOCL Vashi LBP
+      <footer className="landing-footer">
+        <div>
+          Grease Plant Routing System · Production Control Console
         </div>
-        <div style={{ fontSize: "0.6rem", color: "var(--text-dim)" }}>
+        <div>
           React · Convex · Firebase · NVIDIA Gemma 4 · Vercel
         </div>
       </footer>
